@@ -1,0 +1,26 @@
+# real495-calibrated
+densities:
+  plastic_bottle: 0.0336
+  glass_bottle: 0.3207
+  glass_jar: 0.5029
+  metal_can: 0.0299
+  carton: 0.4167
+  tetrapack: 0.0468
+  paper: 0.0052
+  plastic_bag: 0.003
+  plastic_container: 0.0214
+  other: 0.931
+
+# Multiplicative measurement noise on weight.
+# weight_measured = weight_true * N(1, sigma)
+weight_noise_sigma: 0.05
+
+# Depth / volume estimation noise (applied to volume before density multiply).
+depth_noise_sigma: 0.10
+
+# Fraud scenario multipliers — applied to ground-truth mass to emulate each
+# fraud type. generate_multimodal_tuples.py picks one per fraud sample.
+fraud_multipliers:
+  heavy_fill: [2.5, 6.0]       # filled with water/sand → 2.5x–6x mass
+  foreign_object: [1.8, 3.5]   # foreign object inside → moderate increase
+  wrong_class: [0.3, 3.0]      # class swap → arbitrary mass mismatch

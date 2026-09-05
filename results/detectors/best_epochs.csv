@@ -1,0 +1,6 @@
+config,best_epoch,val_bbox_mAP
+htc_x101,17,0.4000
+htc_r50,19,0.3850
+mask_rcnn_r50,20,0.3570
+cascade_mask_rcnn_r50,18,0.3680
+faster_rcnn_r50,17,0.3550

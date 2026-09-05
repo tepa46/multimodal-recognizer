@@ -1,0 +1,211 @@
+# Unified taxonomy: 10 classes for the hybrid waste dataset
+# Maps original class names from each source dataset to a unified class.
+# Classes not listed under a source will be assigned to "other".
+
+unified_classes:
+  - plastic_bottle    # id: 0 — PET bottles, 5L bottles, mountain dew, etc.
+  - glass_bottle      # id: 1 — glass bottles (wine, beer, spirits, etc.)
+  - glass_jar         # id: 2 — glass jars (food, cosmetics, etc.)
+  - metal_can         # id: 3 — aluminium / tin cans (drink, food)
+  - carton            # id: 4 — cardboard boxes, milk cartons, colored cartons
+  - tetrapack         # id: 5 — tetra pak / drink cartons (juice, milk)
+  - paper             # id: 6 — paper, newspaper, books, journals, wrapping paper
+  - plastic_bag       # id: 7 — plastic bags, wrappers, soft plastic film
+  - plastic_container # id: 8 — plastic containers, HDPE bottles, plastic cups, flasks
+  - other             # id: 9 — foreign objects, anything not in classes above
+
+# ---------------------------------------------------------------------------
+# TACO — Trash Annotations in Context (60-class COCO hierarchy)
+# Source: http://tacodataset.org/
+# ---------------------------------------------------------------------------
+taco:
+  # Bottles (super=Bottle)
+  "Clear plastic bottle": plastic_bottle
+  "Other plastic bottle": plastic_bottle
+  "Glass bottle": glass_bottle
+
+  # Bottle caps (super=Bottle cap)
+  "Plastic bottle cap": other
+  "Metal bottle cap": other
+
+  # Cans (super=Can)
+  "Drink can": metal_can
+  "Food Can": metal_can
+  "Aerosol": metal_can
+
+  # Cartons (super=Carton)
+  "Toilet tube": carton
+  "Other carton": carton
+  "Egg carton": carton
+  "Drink carton": tetrapack
+  "Corrugated carton": carton
+  "Meal carton": carton
+  "Pizza box": carton
+
+  # Cups (super=Cup)
+  "Paper cup": paper
+  "Disposable plastic cup": plastic_container
+  "Foam cup": other
+  "Glass cup": other
+  "Other plastic cup": plastic_container
+
+  # Glass jar
+  "Glass jar": glass_jar
+
+  # Lids (super=Lid)
+  "Plastic lid": other
+  "Metal lid": other
+
+  # Paper (super=Paper)
+  "Magazine paper": paper
+  "Tissues": paper
+  "Wrapping paper": paper
+  "Normal paper": paper
+
+  # Paper bags (super=Paper bag)
+  "Paper bag": paper
+  "Plastified paper bag": paper
+
+  # Plastic bags & wrappers (super=Plastic bag & wrapper)
+  "Plastic film": plastic_bag
+  "Six pack rings": other
+  "Garbage bag": plastic_bag
+  "Other plastic wrapper": plastic_bag
+  "Single-use carrier bag": plastic_bag
+  "Polypropylene bag": plastic_bag
+  "Crisp packet": plastic_bag
+
+  # Plastic containers (super=Plastic container)
+  "Spread tub": plastic_container
+  "Tupperware": plastic_container
+  "Disposable food container": plastic_container
+  "Foam food container": plastic_container
+  "Other plastic container": plastic_container
+
+  # Straws (super=Straw)
+  "Plastic straw": other
+  "Paper straw": other
+
+  # Blister packs (super=Blister pack)
+  "Aluminium blister pack": other
+  "Carded blister pack": other
+
+  # Misc single-item supercategories
+  "Aluminium foil": other
+  "Battery": other
+  "Broken glass": other
+  "Food waste": other
+  "Other plastic": other
+  "Plastic glooves": other
+  "Plastic utensils": other
+  "Pop tab": other
+  "Rope & strings": other
+  "Scrap metal": metal_can
+  "Shoe": other
+  "Squeezable tube": plastic_container
+  "Styrofoam piece": other
+  "Unlabeled litter": other
+  "Cigarette": other
+
+# ---------------------------------------------------------------------------
+# ZeroWaste-f — industrial conveyor belt segmentation dataset
+# Source: http://ai.bu.edu/zerowaste/
+# ---------------------------------------------------------------------------
+zerowaste:
+  "rigid_plastic": plastic_container
+  "soft_plastic": plastic_bag
+  "cardboard": carton
+  "metal": metal_can
+
+# ---------------------------------------------------------------------------
+# Drinking Waste Classification (UCL / Kaggle)
+# Source: https://www.kaggle.com/datasets/arkadiyhacks/drinking-waste-classification
+# Only bbox annotations; masks are generated via SAM (sam_autolabel.py).
+# ---------------------------------------------------------------------------
+drinking_waste:
+  "PET": plastic_bottle
+  "Glass": glass_bottle
+  "Aluminium": metal_can
+  "AluCan": metal_can
+  "HDPE": plastic_container
+  "HDPEM": plastic_container
+  # SAM-generated COCO JSON (sam_autolabel.py) already uses unified
+  # category names — provide identity mapping so the build script doesn't
+  # fallback them to "other".
+  "plastic_bottle": plastic_bottle
+  "glass_bottle": glass_bottle
+  "metal_can": metal_can
+  "plastic_container": plastic_container
+
+# ---------------------------------------------------------------------------
+# DWSD — Dense Waste Segmentation Dataset
+# Source: https://data.mendeley.com/datasets/gr99ny6b8p/1
+# ---------------------------------------------------------------------------
+dwsd:
+  "plastic_bottle": plastic_bottle
+  "glass_bottle": glass_bottle
+  "glass_jar": glass_jar
+  "metal_can": metal_can
+  "carton": carton
+  "tetrapack": tetrapack
+  "plastic_bag": plastic_bag
+  "plastic_container": plastic_container
+  "other": other
+  "plastic bottle": plastic_bottle
+  "plastic container": plastic_container
+  "glass": glass_bottle
+  "metal bottle": metal_can
+  "plastic cardboard": carton
+  # Numeric class-id fallbacks when converting from masks.
+  # Based on DWSD mask analysis (rare classes 1,2,13,14 kept as "other"):
+  "class_1": other
+  "class_2": other
+  "class_3": plastic_bottle       # 291 imgs — second most common
+  "class_4": metal_can
+  "class_5": paper                # 170 imgs — third most common
+  "class_6": carton
+  "class_8": plastic_bag
+  "class_9": plastic_container
+  "class_10": glass_bottle
+  "class_11": glass_jar
+  "class_12": tetrapack
+  "class_13": other
+  "class_14": other
+  "class_15": other               # 499 imgs — likely "other/clutter"
+  "paper": paper
+  "paper cup": paper
+  "plastic cup": plastic_container
+  "aluminum foil": other
+  "cloth": other
+  "nylon": plastic_bag
+  "thermocol": other
+  "cardboard": carton
+  "bottle": plastic_bottle
+
+# ---------------------------------------------------------------------------
+# BeachLitter v2022 — geometry source for the OOD set, not a class source.
+# The upstream masks are ENVIRONMENT classes, so connected components of
+# class 1 carry no object type. This mapping builds BeachLitter v1, whose
+# boxes are then re-labelled per object by scripts/beachlitter/build_beachlitter10.py
+# from results/ood/beachlitter_relabel/verified_labels.csv into the 10-class
+# BeachLitter-10 v2 used in the paper. Class-aware metrics on v1 are invalid.
+# ---------------------------------------------------------------------------
+beach_litter:
+  "artificial_litter": other
+
+# ---------------------------------------------------------------------------
+# real495 — the project's own real-sensor set: 215 studio photos,
+# with physical measurements (h/w/d, mass, empty
+# mass) in datasets/real495/measurements.csv.
+# ---------------------------------------------------------------------------
+real495:
+  "plastic_bottle": plastic_bottle
+  "glass_bottle": glass_bottle
+  "glass_jar": glass_jar
+  "metal_can": metal_can
+  "carton": carton
+  "tetrapack": tetrapack
+  "paper": paper
+  "plastic_bag": plastic_bag
+  "plastic_container": plastic_container
+  "other": other

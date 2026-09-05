@@ -1,0 +1,24 @@
+__pycache__/
+*.py[cod]
+.venv/
+.env
+
+# scripts write here; results/ holds the archived snapshot
+experiments/
+work_dirs/
+
+# third-party pretrained weights, fetched by the commands in models/README.md
+checkpoints/
+
+models/detectors/*
+!models/detectors/CHECKSUMS.md5
+
+datasets/raw/
+datasets/processed_v3.3/images/
+datasets/processed_v3.3_noreal/
+datasets/processed_ood/**/images/
+datasets/multimodal/v3.3_sweep/
+
+.DS_Store
+.ipynb_checkpoints/
+.idea

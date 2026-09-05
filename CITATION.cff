@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+type: software
+version: "1.0.0"
+date-released: "2026-09-01"
+message: "If you use this software or the released datasets, please cite the paper."
+title: "Physics-aware multimodal fusion for fraud detection in automated reverse-vending machines"
+authors:
+  - family-names: Makarov
+    given-names: Anton
+    affiliation: "St. Petersburg State University"
+    orcid: "https://orcid.org/0000-0001-9539-6105"
+  - family-names: Salishev
+    given-names: Sergey
+    affiliation: "St. Petersburg State University"
+    orcid: "https://orcid.org/0000-0003-1099-1912"
+  - family-names: Shabunin
+    given-names: Andrey
+    affiliation: "St. Petersburg State University"
+  - family-names: Shishin
+    given-names: Kirill
+    affiliation: "St. Petersburg State University"
+    orcid: "https://orcid.org/0009-0004-4073-7813"
+license: MIT
+repository-code: "https://github.com/tepa46/multimodal-recognizer"
+keywords:
+  - fraud detection
+  - instance segmentation
+  - multimodal fusion
+  - physics-aware learning
+  - reverse-vending machines
+  - waste recycling

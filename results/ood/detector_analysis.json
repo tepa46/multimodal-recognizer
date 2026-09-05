@@ -1,0 +1,332 @@
+{
+ "htc_x101": {
+  "class_agnostic": {
+   "AP": 0.10080800410270935,
+   "AP50": 0.1645273546836246,
+   "AP75": 0.11136512047413391,
+   "AR100": 0.32231867824138893
+  },
+  "audit": {
+   "per_class": {
+    "8": {
+     "n": 435,
+     "matched": 196,
+     "correct": 8
+    },
+    "0": {
+     "n": 541,
+     "matched": 190,
+     "correct": 79
+    },
+    "1": {
+     "n": 48,
+     "matched": 10,
+     "correct": 0
+    },
+    "5": {
+     "n": 30,
+     "matched": 23,
+     "correct": 0
+    },
+    "3": {
+     "n": 39,
+     "matched": 16,
+     "correct": 1
+    },
+    "7": {
+     "n": 280,
+     "matched": 111,
+     "correct": 11
+    },
+    "6": {
+     "n": 26,
+     "matched": 12,
+     "correct": 0
+    },
+    "2": {
+     "n": 5,
+     "matched": 0,
+     "correct": 0
+    },
+    "4": {
+     "n": 7,
+     "matched": 1,
+     "correct": 0
+    }
+   },
+   "other_total": 2160,
+   "other_false_accept": 80,
+   "det_bins": {
+    "same_class": 116,
+    "cross_class": 178,
+    "other_gt": 102,
+    "ignore_zone": 372,
+    "background": 543
+   }
+  }
+ },
+ "htc_r50": {
+  "class_agnostic": {
+   "AP": 0.09257182360076736,
+   "AP50": 0.1477450921604145,
+   "AP75": 0.09872621995219466,
+   "AR100": 0.2966395967516101
+  },
+  "audit": {
+   "per_class": {
+    "8": {
+     "n": 435,
+     "matched": 190,
+     "correct": 16
+    },
+    "0": {
+     "n": 541,
+     "matched": 179,
+     "correct": 80
+    },
+    "1": {
+     "n": 48,
+     "matched": 9,
+     "correct": 0
+    },
+    "5": {
+     "n": 30,
+     "matched": 16,
+     "correct": 0
+    },
+    "3": {
+     "n": 39,
+     "matched": 13,
+     "correct": 1
+    },
+    "7": {
+     "n": 280,
+     "matched": 76,
+     "correct": 13
+    },
+    "6": {
+     "n": 26,
+     "matched": 12,
+     "correct": 0
+    },
+    "2": {
+     "n": 5,
+     "matched": 1,
+     "correct": 0
+    },
+    "4": {
+     "n": 7,
+     "matched": 3,
+     "correct": 1
+    }
+   },
+   "other_total": 2160,
+   "other_false_accept": 68,
+   "det_bins": {
+    "same_class": 127,
+    "cross_class": 184,
+    "other_gt": 85,
+    "ignore_zone": 385,
+    "background": 655
+   }
+  }
+ },
+ "mask_rcnn_r50": {
+  "class_agnostic": {
+   "AP": 0.07400523852402154,
+   "AP50": 0.12147736751649056,
+   "AP75": 0.08039872917215782,
+   "AR100": 0.21506580789694763
+  },
+  "audit": {
+   "per_class": {
+    "8": {
+     "n": 435,
+     "matched": 200,
+     "correct": 16
+    },
+    "0": {
+     "n": 541,
+     "matched": 188,
+     "correct": 65
+    },
+    "1": {
+     "n": 48,
+     "matched": 13,
+     "correct": 0
+    },
+    "5": {
+     "n": 30,
+     "matched": 15,
+     "correct": 0
+    },
+    "3": {
+     "n": 39,
+     "matched": 14,
+     "correct": 1
+    },
+    "7": {
+     "n": 280,
+     "matched": 91,
+     "correct": 16
+    },
+    "6": {
+     "n": 26,
+     "matched": 14,
+     "correct": 0
+    },
+    "2": {
+     "n": 5,
+     "matched": 0,
+     "correct": 0
+    },
+    "4": {
+     "n": 7,
+     "matched": 3,
+     "correct": 0
+    }
+   },
+   "other_total": 2160,
+   "other_false_accept": 97,
+   "det_bins": {
+    "same_class": 148,
+    "cross_class": 241,
+    "other_gt": 145,
+    "ignore_zone": 519,
+    "background": 1073
+   }
+  }
+ },
+ "cascade_mask_rcnn_r50": {
+  "class_agnostic": {
+   "AP": 0.08383381706011264,
+   "AP50": 0.13299361658615425,
+   "AP75": 0.09152931726149419,
+   "AR100": 0.2139176701204144
+  },
+  "audit": {
+   "per_class": {
+    "8": {
+     "n": 435,
+     "matched": 180,
+     "correct": 12
+    },
+    "0": {
+     "n": 541,
+     "matched": 170,
+     "correct": 52
+    },
+    "1": {
+     "n": 48,
+     "matched": 7,
+     "correct": 1
+    },
+    "5": {
+     "n": 30,
+     "matched": 15,
+     "correct": 0
+    },
+    "3": {
+     "n": 39,
+     "matched": 14,
+     "correct": 2
+    },
+    "7": {
+     "n": 280,
+     "matched": 76,
+     "correct": 9
+    },
+    "6": {
+     "n": 26,
+     "matched": 9,
+     "correct": 1
+    },
+    "2": {
+     "n": 5,
+     "matched": 0,
+     "correct": 0
+    },
+    "4": {
+     "n": 7,
+     "matched": 3,
+     "correct": 0
+    }
+   },
+   "other_total": 2160,
+   "other_false_accept": 70,
+   "det_bins": {
+    "same_class": 90,
+    "cross_class": 167,
+    "other_gt": 92,
+    "ignore_zone": 300,
+    "background": 666
+   }
+  }
+ },
+ "faster_rcnn_r50": {
+  "class_agnostic": {
+   "AP": 0.07506275776258277,
+   "AP50": 0.12632766988659586,
+   "AP75": 0.0817986440350023,
+   "AR100": 0.22836740408849057
+  },
+  "audit": {
+   "per_class": {
+    "8": {
+     "n": 435,
+     "matched": 207,
+     "correct": 23
+    },
+    "0": {
+     "n": 541,
+     "matched": 197,
+     "correct": 77
+    },
+    "1": {
+     "n": 48,
+     "matched": 13,
+     "correct": 0
+    },
+    "5": {
+     "n": 30,
+     "matched": 18,
+     "correct": 2
+    },
+    "3": {
+     "n": 39,
+     "matched": 18,
+     "correct": 2
+    },
+    "7": {
+     "n": 280,
+     "matched": 85,
+     "correct": 9
+    },
+    "6": {
+     "n": 26,
+     "matched": 12,
+     "correct": 0
+    },
+    "2": {
+     "n": 5,
+     "matched": 1,
+     "correct": 0
+    },
+    "4": {
+     "n": 7,
+     "matched": 3,
+     "correct": 0
+    }
+   },
+   "other_total": 2160,
+   "other_false_accept": 102,
+   "det_bins": {
+    "same_class": 146,
+    "cross_class": 219,
+    "other_gt": 143,
+    "ignore_zone": 495,
+    "background": 1051
+   }
+  }
+ }
+}

@@ -1,0 +1,39 @@
+GT (condition=normal): 366
+  не локализовано (IoU<0.5 @ score>=0.3): 84 (23.0%)
+  локализовано: 282 (77.0%)
+    верный класс: 147 (52.1% of localized)
+    РЕАЛЬНАЯ путаница класса: 135 (47.9% of localized)
+
+=== confusion matrix (true -> reported) ===
+  other                -> metal_can             x29
+  plastic_container    -> other                 x23
+  glass_jar            -> metal_can             x10
+  glass_jar            -> plastic_container     x10
+  other                -> carton                x7
+  plastic_container    -> metal_can             x6
+  tetrapack            -> carton                x6
+  paper                -> carton                x6
+  glass_jar            -> other                 x6
+  plastic_bag          -> plastic_bottle        x4
+  tetrapack            -> metal_can             x3
+  metal_can            -> other                 x3
+  plastic_bottle       -> other                 x3
+  plastic_bottle       -> plastic_container     x3
+  plastic_bag          -> carton                x3
+  plastic_bag          -> metal_can             x2
+  tetrapack            -> plastic_bottle        x2
+  plastic_bag          -> other                 x2
+  paper                -> plastic_bag           x1
+  plastic_container    -> carton                x1
+  paper                -> other                 x1
+  plastic_bottle       -> glass_bottle          x1
+  paper                -> plastic_container     x1
+  plastic_container    -> plastic_bottle        x1
+  plastic_bag          -> plastic_container     x1
+
+=== physics-as-safety-net (confused instances с измерениями, n=135) ===
+  поймано физикой (rel_err > 0.25): 134 (99.3%)
+  пропущено физикой: 1 (0.7%)
+
+=== пропущенные случаи (детально) ===
+  IMG_2193.jpg     other              -> carton              vol=   14.0  mass=   5.0  exp=   5.8  rel_err=0.143

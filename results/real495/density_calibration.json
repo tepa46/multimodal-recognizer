@@ -1,0 +1,98 @@
+{
+  "method": "median(mass_g / literal volume), condition=normal",
+  "volume_mode": "literal",
+  "source": "real300",
+  "min_objects": 1,
+  "per_class": {
+    "plastic_bottle": {
+      "n_ann": 20,
+      "n_objects": 4,
+      "assumed": 0.1,
+      "measured": 0.0336,
+      "factor": 0.34,
+      "adopted": 0.0336,
+      "verdict": "CORRECTED"
+    },
+    "glass_bottle": {
+      "n_ann": 14,
+      "n_objects": 1,
+      "assumed": 0.35,
+      "measured": 0.3207,
+      "factor": 0.92,
+      "adopted": 0.3207,
+      "verdict": "confirmed (within 2x)"
+    },
+    "glass_jar": {
+      "n_ann": 26,
+      "n_objects": 2,
+      "assumed": 0.4,
+      "measured": 0.5029,
+      "factor": 1.26,
+      "adopted": 0.5029,
+      "verdict": "confirmed (within 2x)"
+    },
+    "metal_can": {
+      "n_ann": 23,
+      "n_objects": 2,
+      "assumed": 0.08,
+      "measured": 0.0299,
+      "factor": 0.37,
+      "adopted": 0.0299,
+      "verdict": "CORRECTED"
+    },
+    "carton": {
+      "n_ann": 33,
+      "n_objects": 4,
+      "assumed": 0.05,
+      "measured": 0.4167,
+      "factor": 8.33,
+      "adopted": 0.4167,
+      "verdict": "CORRECTED"
+    },
+    "tetrapack": {
+      "n_ann": 13,
+      "n_objects": 1,
+      "assumed": 0.1,
+      "measured": 0.0468,
+      "factor": 0.47,
+      "adopted": 0.0468,
+      "verdict": "CORRECTED"
+    },
+    "paper": {
+      "n_ann": 20,
+      "n_objects": 2,
+      "assumed": 0.3,
+      "measured": 0.0052,
+      "factor": 0.02,
+      "adopted": 0.0052,
+      "verdict": "CORRECTED"
+    },
+    "plastic_bag": {
+      "n_ann": 53,
+      "n_objects": 5,
+      "assumed": 0.02,
+      "measured": 0.003,
+      "factor": 0.15,
+      "adopted": 0.003,
+      "verdict": "CORRECTED"
+    },
+    "plastic_container": {
+      "n_ann": 41,
+      "n_objects": 3,
+      "assumed": 0.15,
+      "measured": 0.0214,
+      "factor": 0.14,
+      "adopted": 0.0214,
+      "verdict": "CORRECTED"
+    },
+    "other": {
+      "n_ann": 123,
+      "n_objects": 7,
+      "assumed": 0.5,
+      "measured": 0.931,
+      "factor": 1.86,
+      "adopted": 0.931,
+      "verdict": "confirmed (within 2x)"
+    }
+  }
+}

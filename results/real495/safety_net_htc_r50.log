@@ -1,0 +1,45 @@
+GT (condition=normal): 366
+  не локализовано (IoU<0.5 @ score>=0.3): 75 (20.5%)
+  локализовано: 291 (79.5%)
+    верный класс: 161 (55.3% of localized)
+    РЕАЛЬНАЯ путаница класса: 130 (44.7% of localized)
+
+=== confusion matrix (true -> reported) ===
+  other                -> metal_can             x33
+  glass_jar            -> plastic_container     x17
+  paper                -> carton                x10
+  other                -> carton                x10
+  plastic_container    -> other                 x7
+  tetrapack            -> metal_can             x6
+  glass_bottle         -> metal_can             x6
+  glass_jar            -> metal_can             x5
+  plastic_bottle       -> other                 x4
+  plastic_bag          -> carton                x4
+  plastic_bottle       -> plastic_container     x3
+  glass_jar            -> other                 x3
+  plastic_container    -> metal_can             x2
+  plastic_bag          -> plastic_bottle        x2
+  tetrapack            -> plastic_bag           x2
+  paper                -> plastic_container     x2
+  tetrapack            -> carton                x2
+  other                -> plastic_container     x1
+  plastic_bag          -> metal_can             x1
+  plastic_container    -> carton                x1
+  metal_can            -> other                 x1
+  tetrapack            -> plastic_bottle        x1
+  plastic_bag          -> other                 x1
+  other                -> plastic_bag           x1
+  plastic_bottle       -> metal_can             x1
+  plastic_bottle       -> glass_bottle          x1
+  plastic_container    -> plastic_bottle        x1
+  glass_bottle         -> plastic_bottle        x1
+  plastic_bag          -> plastic_container     x1
+
+=== physics-as-safety-net (confused instances с измерениями, n=130) ===
+  поймано физикой (rel_err > 0.25): 127 (97.7%)
+  пропущено физикой: 3 (2.3%)
+
+=== пропущенные случаи (детально) ===
+  IMG_2122.jpg     other              -> carton              vol=   14.0  mass=   5.0  exp=   5.8  rel_err=0.143
+  IMG_2189.jpg     other              -> carton              vol=   14.0  mass=   5.0  exp=   5.8  rel_err=0.143
+  IMG_2192.jpg     other              -> carton              vol=   14.0  mass=   5.0  exp=   5.8  rel_err=0.143

@@ -1,0 +1,268 @@
+{
+  "htc_x101": {
+    "v3.3": {
+      "bbox_mAP": 0.409,
+      "segm_mAP": 0.394,
+      "bbox_per_class": {
+        "plastic_bottle": 0.663,
+        "glass_bottle": 0.863,
+        "glass_jar": 0.067,
+        "metal_can": 0.791,
+        "carton": 0.142,
+        "tetrapack": 0.08,
+        "paper": 0.143,
+        "plastic_bag": 0.497,
+        "plastic_container": 0.631,
+        "other": 0.214
+      },
+      "segm_per_class": {
+        "plastic_bottle": 0.644,
+        "glass_bottle": 0.796,
+        "glass_jar": 0.077,
+        "metal_can": 0.775,
+        "carton": 0.142,
+        "tetrapack": 0.085,
+        "paper": 0.126,
+        "plastic_bag": 0.493,
+        "plastic_container": 0.614,
+        "other": 0.185
+      }
+    },
+    "v3.2": {
+      "bbox_mAP": 0.449,
+      "segm_mAP": 0.428,
+      "bbox_per_class": {
+        "plastic_bottle": 0.922,
+        "glass_bottle": 0.893,
+        "glass_jar": 0.0,
+        "metal_can": 0.856,
+        "carton": 0.118,
+        "tetrapack": 0.117,
+        "paper": 0.139,
+        "plastic_bag": 0.502,
+        "plastic_container": 0.64,
+        "other": 0.298
+      },
+      "segm_per_class": {
+        "plastic_bottle": 0.916,
+        "glass_bottle": 0.794,
+        "glass_jar": 0.0,
+        "metal_can": 0.829,
+        "carton": 0.117,
+        "tetrapack": 0.124,
+        "paper": 0.132,
+        "plastic_bag": 0.486,
+        "plastic_container": 0.622,
+        "other": 0.263
+      }
+    }
+  },
+  "htc_r50": {
+    "v3.3": {
+      "bbox_mAP": 0.414,
+      "segm_mAP": 0.397,
+      "bbox_per_class": {
+        "plastic_bottle": 0.644,
+        "glass_bottle": 0.86,
+        "glass_jar": 0.266,
+        "metal_can": 0.788,
+        "carton": 0.118,
+        "tetrapack": 0.053,
+        "paper": 0.099,
+        "plastic_bag": 0.479,
+        "plastic_container": 0.617,
+        "other": 0.211
+      },
+      "segm_per_class": {
+        "plastic_bottle": 0.635,
+        "glass_bottle": 0.79,
+        "glass_jar": 0.262,
+        "metal_can": 0.773,
+        "carton": 0.117,
+        "tetrapack": 0.054,
+        "paper": 0.097,
+        "plastic_bag": 0.469,
+        "plastic_container": 0.595,
+        "other": 0.18
+      }
+    },
+    "v3.2": {
+      "bbox_mAP": 0.443,
+      "segm_mAP": 0.421,
+      "bbox_per_class": {
+        "plastic_bottle": 0.93,
+        "glass_bottle": 0.888,
+        "glass_jar": 0.023,
+        "metal_can": 0.837,
+        "carton": 0.122,
+        "tetrapack": 0.179,
+        "paper": 0.109,
+        "plastic_bag": 0.456,
+        "plastic_container": 0.621,
+        "other": 0.261
+      },
+      "segm_per_class": {
+        "plastic_bottle": 0.922,
+        "glass_bottle": 0.775,
+        "glass_jar": 0.026,
+        "metal_can": 0.812,
+        "carton": 0.121,
+        "tetrapack": 0.176,
+        "paper": 0.101,
+        "plastic_bag": 0.446,
+        "plastic_container": 0.606,
+        "other": 0.226
+      }
+    }
+  },
+  "mask_rcnn_r50": {
+    "v3.3": {
+      "bbox_mAP": 0.389,
+      "segm_mAP": 0.371,
+      "bbox_per_class": {
+        "plastic_bottle": 0.636,
+        "glass_bottle": 0.834,
+        "glass_jar": 0.188,
+        "metal_can": 0.772,
+        "carton": 0.111,
+        "tetrapack": 0.049,
+        "paper": 0.102,
+        "plastic_bag": 0.446,
+        "plastic_container": 0.58,
+        "other": 0.169
+      },
+      "segm_per_class": {
+        "plastic_bottle": 0.62,
+        "glass_bottle": 0.736,
+        "glass_jar": 0.188,
+        "metal_can": 0.757,
+        "carton": 0.112,
+        "tetrapack": 0.045,
+        "paper": 0.098,
+        "plastic_bag": 0.442,
+        "plastic_container": 0.56,
+        "other": 0.152
+      }
+    },
+    "v3.2": {
+      "bbox_mAP": 0.424,
+      "segm_mAP": 0.401,
+      "bbox_per_class": {
+        "plastic_bottle": 0.904,
+        "glass_bottle": 0.867,
+        "glass_jar": 0.0,
+        "metal_can": 0.813,
+        "carton": 0.126,
+        "tetrapack": 0.159,
+        "paper": 0.103,
+        "plastic_bag": 0.436,
+        "plastic_container": 0.592,
+        "other": 0.236
+      },
+      "segm_per_class": {
+        "plastic_bottle": 0.894,
+        "glass_bottle": 0.725,
+        "glass_jar": 0.0,
+        "metal_can": 0.795,
+        "carton": 0.129,
+        "tetrapack": 0.159,
+        "paper": 0.1,
+        "plastic_bag": 0.431,
+        "plastic_container": 0.566,
+        "other": 0.21
+      }
+    }
+  },
+  "cascade_mask_rcnn_r50": {
+    "v3.3": {
+      "bbox_mAP": 0.377,
+      "segm_mAP": 0.359,
+      "bbox_per_class": {
+        "plastic_bottle": 0.63,
+        "glass_bottle": 0.86,
+        "glass_jar": 0.016,
+        "metal_can": 0.782,
+        "carton": 0.108,
+        "tetrapack": 0.041,
+        "paper": 0.097,
+        "plastic_bag": 0.456,
+        "plastic_container": 0.587,
+        "other": 0.195
+      },
+      "segm_per_class": {
+        "plastic_bottle": 0.618,
+        "glass_bottle": 0.789,
+        "glass_jar": 0.016,
+        "metal_can": 0.759,
+        "carton": 0.103,
+        "tetrapack": 0.046,
+        "paper": 0.086,
+        "plastic_bag": 0.446,
+        "plastic_container": 0.562,
+        "other": 0.168
+      }
+    },
+    "v3.2": {
+      "bbox_mAP": 0.422,
+      "segm_mAP": 0.395,
+      "bbox_per_class": {
+        "plastic_bottle": 0.914,
+        "glass_bottle": 0.879,
+        "glass_jar": 0.0,
+        "metal_can": 0.829,
+        "carton": 0.092,
+        "tetrapack": 0.117,
+        "paper": 0.09,
+        "plastic_bag": 0.444,
+        "plastic_container": 0.607,
+        "other": 0.246
+      },
+      "segm_per_class": {
+        "plastic_bottle": 0.905,
+        "glass_bottle": 0.764,
+        "glass_jar": 0.0,
+        "metal_can": 0.794,
+        "carton": 0.088,
+        "tetrapack": 0.113,
+        "paper": 0.08,
+        "plastic_bag": 0.426,
+        "plastic_container": 0.57,
+        "other": 0.214
+      }
+    }
+  },
+  "faster_rcnn_r50": {
+    "v3.3": {
+      "bbox_mAP": 0.381,
+      "segm_mAP": null,
+      "bbox_per_class": {
+        "plastic_bottle": 0.628,
+        "glass_bottle": 0.82,
+        "glass_jar": 0.169,
+        "metal_can": 0.758,
+        "carton": 0.124,
+        "tetrapack": 0.061,
+        "paper": 0.066,
+        "plastic_bag": 0.423,
+        "plastic_container": 0.589,
+        "other": 0.169
+      }
+    },
+    "v3.2": {
+      "bbox_mAP": 0.418,
+      "segm_mAP": null,
+      "bbox_per_class": {
+        "plastic_bottle": 0.902,
+        "glass_bottle": 0.87,
+        "glass_jar": 0.0,
+        "metal_can": 0.819,
+        "carton": 0.119,
+        "tetrapack": 0.157,
+        "paper": 0.073,
+        "plastic_bag": 0.424,
+        "plastic_container": 0.587,
+        "other": 0.228
+      }
+    }
+  }
+}

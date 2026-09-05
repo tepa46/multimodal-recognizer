@@ -1,0 +1,840 @@
+/home/tepa46/projects/multimodal-recognizer/.venv/lib/python3.12/site-packages/mim/commands/list.py:4: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+/usr/lib/python3.12/importlib/__init__.py:131: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  _bootstrap._exec(spec, module)
+/usr/lib/python3.12/importlib/__init__.py:131: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  _bootstrap._exec(spec, module)
+Testing command is /home/tepa46/projects/multimodal-recognizer/.venv/bin/python /home/tepa46/projects/multimodal-recognizer/.venv/lib/python3.12/site-packages/mmdet/.mim/tools/test.py experiments/configs/faster_rcnn_r50.py experiments/work_dirs/faster_rcnn_r50_v33/epoch_17.pth --launcher none --work-dir experiments/work_dirs/faster_rcnn_r50_v33 --cfg-options test_dataloader.dataset.data_root=datasets/processed_v3.3/ test_evaluator.ann_file=datasets/processed_v3.3/annotations/instances_test.json test_evaluator.classwise=True. 
+/home/tepa46/projects/multimodal-recognizer/.venv/lib/python3.12/site-packages/mmengine/optim/optimizer/zero_optimizer.py:11: DeprecationWarning: `TorchScript` support for functional optimizers is deprecated and will be removed in a future PyTorch release. Consider using the `torch.compile` optimizer instead.
+  from torch.distributed.optim import \
+/home/tepa46/projects/multimodal-recognizer/.venv/lib/python3.12/site-packages/mmengine/utils/package_utils.py:17: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+/usr/lib/python3.12/importlib/__init__.py:131: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  _bootstrap._exec(spec, module)
+08/15 12:38:05 - mmengine - INFO - 
+------------------------------------------------------------
+System environment:
+    sys.platform: linux
+    Python: 3.12.3 (main, Jun 19 2026, 12:46:00) [GCC 13.3.0]
+    CUDA available: True
+    MUSA available: False
+    numpy_random_seed: 864095061
+    GPU 0: NVIDIA GeForce RTX 4070 Ti SUPER
+    CUDA_HOME: /usr
+    NVCC: Cuda compilation tools, release 12.0, V12.0.140
+    GCC: x86_64-linux-gnu-gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+    PyTorch: 2.5.1+cu121
+    PyTorch compiling details: PyTorch built with:
+  - GCC 9.3
+  - C++ Version: 201703
+  - Intel(R) oneAPI Math Kernel Library Version 2024.2-Product Build 20240605 for Intel(R) 64 architecture applications
+  - Intel(R) MKL-DNN v3.5.3 (Git Hash 66f0cb9eb66affd2da3bf5f8d897376f04aae6af)
+  - OpenMP 201511 (a.k.a. OpenMP 4.5)
+  - LAPACK is enabled (usually provided by MKL)
+  - NNPACK is enabled
+  - CPU capability usage: AVX2
+  - CUDA Runtime 12.1
+  - NVCC architecture flags: -gencode;arch=compute_50,code=sm_50;-gencode;arch=compute_60,code=sm_60;-gencode;arch=compute_70,code=sm_70;-gencode;arch=compute_75,code=sm_75;-gencode;arch=compute_80,code=sm_80;-gencode;arch=compute_86,code=sm_86;-gencode;arch=compute_90,code=sm_90
+  - CuDNN 90.1  (built against CUDA 12.4)
+  - Magma 2.6.1
+  - Build settings: BLAS_INFO=mkl, BUILD_TYPE=Release, CUDA_VERSION=12.1, CUDNN_VERSION=9.1.0, CXX_COMPILER=/opt/rh/devtoolset-9/root/usr/bin/c++, CXX_FLAGS= -D_GLIBCXX_USE_CXX11_ABI=0 -fabi-version=11 -fvisibility-inlines-hidden -DUSE_PTHREADPOOL -DNDEBUG -DUSE_KINETO -DLIBKINETO_NOROCTRACER -DLIBKINETO_NOXPUPTI=ON -DUSE_FBGEMM -DUSE_PYTORCH_QNNPACK -DUSE_XNNPACK -DSYMBOLICATE_MOBILE_DEBUG_HANDLE -O2 -fPIC -Wall -Wextra -Werror=return-type -Werror=non-virtual-dtor -Werror=bool-operation -Wnarrowing -Wno-missing-field-initializers -Wno-type-limits -Wno-array-bounds -Wno-unknown-pragmas -Wno-unused-parameter -Wno-strict-overflow -Wno-strict-aliasing -Wno-stringop-overflow -Wsuggest-override -Wno-psabi -Wno-error=old-style-cast -Wno-missing-braces -fdiagnostics-color=always -faligned-new -Wno-unused-but-set-variable -Wno-maybe-uninitialized -fno-math-errno -fno-trapping-math -Werror=format -Wno-stringop-overflow, LAPACK_INFO=mkl, PERF_WITH_AVX=1, PERF_WITH_AVX2=1, TORCH_VERSION=2.5.1, USE_CUDA=ON, USE_CUDNN=ON, USE_CUSPARSELT=1, USE_EXCEPTION_PTR=1, USE_GFLAGS=OFF, USE_GLOG=OFF, USE_GLOO=ON, USE_MKL=ON, USE_MKLDNN=ON, USE_MPI=OFF, USE_NCCL=1, USE_NNPACK=ON, USE_OPENMP=ON, USE_ROCM=OFF, USE_ROCM_KERNEL_ASSERT=OFF, 
+
+    TorchVision: 0.20.1+cu121
+    OpenCV: 4.13.0
+    MMEngine: 0.10.7
+
+Runtime environment:
+    cudnn_benchmark: False
+    mp_cfg: {'mp_start_method': 'fork', 'opencv_num_threads': 0}
+    dist_cfg: {'backend': 'nccl'}
+    seed: 864095061
+    Distributed launcher: none
+    Distributed training: False
+    GPU number: 1
+------------------------------------------------------------
+
+08/15 12:38:05 - mmengine - INFO - Config:
+auto_scale_lr = dict(base_batch_size=16, enable=False)
+backend_args = None
+data_root = 'datasets/processed_v3.1/'
+dataset_type = 'CocoDataset'
+default_hooks = dict(
+    checkpoint=dict(_scope_='mmdet', interval=1, type='CheckpointHook'),
+    logger=dict(_scope_='mmdet', interval=50, type='LoggerHook'),
+    param_scheduler=dict(_scope_='mmdet', type='ParamSchedulerHook'),
+    sampler_seed=dict(_scope_='mmdet', type='DistSamplerSeedHook'),
+    timer=dict(_scope_='mmdet', type='IterTimerHook'),
+    visualization=dict(_scope_='mmdet', type='DetVisualizationHook'))
+default_scope = 'mmdet'
+env_cfg = dict(
+    cudnn_benchmark=False,
+    dist_cfg=dict(backend='nccl'),
+    mp_cfg=dict(mp_start_method='fork', opencv_num_threads=0))
+launcher = 'none'
+load_from = 'experiments/work_dirs/faster_rcnn_r50_v33/epoch_17.pth'
+log_level = 'INFO'
+log_processor = dict(
+    _scope_='mmdet', by_epoch=True, type='LogProcessor', window_size=50)
+max_epochs = 24
+metainfo = dict(
+    classes=(
+        'plastic_bottle',
+        'glass_bottle',
+        'glass_jar',
+        'metal_can',
+        'carton',
+        'tetrapack',
+        'paper',
+        'plastic_bag',
+        'plastic_container',
+        'other',
+    ),
+    palette=[
+        (
+            220,
+            20,
+            60,
+        ),
+        (
+            119,
+            11,
+            32,
+        ),
+        (
+            0,
+            0,
+            142,
+        ),
+        (
+            0,
+            0,
+            230,
+        ),
+        (
+            106,
+            0,
+            228,
+        ),
+        (
+            0,
+            60,
+            100,
+        ),
+        (
+            0,
+            80,
+            100,
+        ),
+        (
+            0,
+            0,
+            70,
+        ),
+        (
+            0,
+            0,
+            192,
+        ),
+        (
+            250,
+            170,
+            30,
+        ),
+    ])
+model = dict(
+    _scope_='mmdet',
+    backbone=dict(
+        depth=50,
+        frozen_stages=1,
+        init_cfg=dict(checkpoint='torchvision://resnet50', type='Pretrained'),
+        norm_cfg=dict(requires_grad=True, type='BN'),
+        norm_eval=True,
+        num_stages=4,
+        out_indices=(
+            0,
+            1,
+            2,
+            3,
+        ),
+        style='pytorch',
+        type='ResNet'),
+    data_preprocessor=dict(
+        bgr_to_rgb=True,
+        mean=[
+            123.675,
+            116.28,
+            103.53,
+        ],
+        pad_size_divisor=32,
+        std=[
+            58.395,
+            57.12,
+            57.375,
+        ],
+        type='DetDataPreprocessor'),
+    neck=dict(
+        in_channels=[
+            256,
+            512,
+            1024,
+            2048,
+        ],
+        num_outs=5,
+        out_channels=256,
+        type='FPN'),
+    roi_head=dict(
+        bbox_head=dict(
+            bbox_coder=dict(
+                target_means=[
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                ],
+                target_stds=[
+                    0.1,
+                    0.1,
+                    0.2,
+                    0.2,
+                ],
+                type='DeltaXYWHBBoxCoder'),
+            fc_out_channels=1024,
+            in_channels=256,
+            loss_bbox=dict(loss_weight=1.0, type='L1Loss'),
+            loss_cls=dict(
+                loss_weight=1.0, type='CrossEntropyLoss', use_sigmoid=False),
+            num_classes=10,
+            reg_class_agnostic=False,
+            roi_feat_size=7,
+            type='Shared2FCBBoxHead'),
+        bbox_roi_extractor=dict(
+            featmap_strides=[
+                4,
+                8,
+                16,
+                32,
+            ],
+            out_channels=256,
+            roi_layer=dict(output_size=7, sampling_ratio=0, type='RoIAlign'),
+            type='SingleRoIExtractor'),
+        type='StandardRoIHead'),
+    rpn_head=dict(
+        anchor_generator=dict(
+            ratios=[
+                0.5,
+                1.0,
+                2.0,
+            ],
+            scales=[
+                8,
+            ],
+            strides=[
+                4,
+                8,
+                16,
+                32,
+                64,
+            ],
+            type='AnchorGenerator'),
+        bbox_coder=dict(
+            target_means=[
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+            ],
+            target_stds=[
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+            ],
+            type='DeltaXYWHBBoxCoder'),
+        feat_channels=256,
+        in_channels=256,
+        loss_bbox=dict(loss_weight=1.0, type='L1Loss'),
+        loss_cls=dict(
+            loss_weight=1.0, type='CrossEntropyLoss', use_sigmoid=True),
+        type='RPNHead'),
+    test_cfg=dict(
+        rcnn=dict(
+            max_per_img=100,
+            nms=dict(iou_threshold=0.5, type='nms'),
+            score_thr=0.05),
+        rpn=dict(
+            max_per_img=1000,
+            min_bbox_size=0,
+            nms=dict(iou_threshold=0.7, type='nms'),
+            nms_pre=1000)),
+    train_cfg=dict(
+        rcnn=dict(
+            assigner=dict(
+                ignore_iof_thr=-1,
+                match_low_quality=False,
+                min_pos_iou=0.5,
+                neg_iou_thr=0.5,
+                pos_iou_thr=0.5,
+                type='MaxIoUAssigner'),
+            debug=False,
+            pos_weight=-1,
+            sampler=dict(
+                add_gt_as_proposals=True,
+                neg_pos_ub=-1,
+                num=512,
+                pos_fraction=0.25,
+                type='RandomSampler')),
+        rpn=dict(
+            allowed_border=-1,
+            assigner=dict(
+                ignore_iof_thr=-1,
+                match_low_quality=True,
+                min_pos_iou=0.3,
+                neg_iou_thr=0.3,
+                pos_iou_thr=0.7,
+                type='MaxIoUAssigner'),
+            debug=False,
+            pos_weight=-1,
+            sampler=dict(
+                add_gt_as_proposals=False,
+                neg_pos_ub=-1,
+                num=256,
+                pos_fraction=0.5,
+                type='RandomSampler')),
+        rpn_proposal=dict(
+            max_per_img=1000,
+            min_bbox_size=0,
+            nms=dict(iou_threshold=0.7, type='nms'),
+            nms_pre=2000)),
+    type='FasterRCNN')
+num_classes = 10
+optim_wrapper = dict(
+    _scope_='mmdet',
+    clip_grad=dict(max_norm=35, norm_type=2),
+    optimizer=dict(lr=0.0025, momentum=0.9, type='SGD', weight_decay=0.0001),
+    type='OptimWrapper')
+param_scheduler = [
+    dict(
+        begin=0, by_epoch=False, end=500, start_factor=0.001, type='LinearLR'),
+    dict(
+        begin=0,
+        by_epoch=True,
+        end=24,
+        gamma=0.1,
+        milestones=[
+            16,
+            22,
+        ],
+        type='MultiStepLR'),
+]
+resume = False
+test_cfg = dict(_scope_='mmdet', type='TestLoop')
+test_dataloader = dict(
+    batch_size=1,
+    dataset=dict(
+        _scope_='mmdet',
+        ann_file='annotations/instances_test.json',
+        backend_args=None,
+        data_prefix=dict(img='images/test/'),
+        data_root='datasets/processed_v3.3/',
+        metainfo=dict(
+            classes=(
+                'plastic_bottle',
+                'glass_bottle',
+                'glass_jar',
+                'metal_can',
+                'carton',
+                'tetrapack',
+                'paper',
+                'plastic_bag',
+                'plastic_container',
+                'other',
+            ),
+            palette=[
+                (
+                    220,
+                    20,
+                    60,
+                ),
+                (
+                    119,
+                    11,
+                    32,
+                ),
+                (
+                    0,
+                    0,
+                    142,
+                ),
+                (
+                    0,
+                    0,
+                    230,
+                ),
+                (
+                    106,
+                    0,
+                    228,
+                ),
+                (
+                    0,
+                    60,
+                    100,
+                ),
+                (
+                    0,
+                    80,
+                    100,
+                ),
+                (
+                    0,
+                    0,
+                    70,
+                ),
+                (
+                    0,
+                    0,
+                    192,
+                ),
+                (
+                    250,
+                    170,
+                    30,
+                ),
+            ]),
+        pipeline=[
+            dict(backend_args=None, type='LoadImageFromFile'),
+            dict(keep_ratio=True, scale=(
+                1333,
+                800,
+            ), type='Resize'),
+            dict(type='LoadAnnotations', with_bbox=True),
+            dict(
+                meta_keys=(
+                    'img_id',
+                    'img_path',
+                    'ori_shape',
+                    'img_shape',
+                    'scale_factor',
+                ),
+                type='PackDetInputs'),
+        ],
+        test_mode=True,
+        type='CocoDataset'),
+    drop_last=False,
+    num_workers=2,
+    persistent_workers=True,
+    sampler=dict(_scope_='mmdet', shuffle=False, type='DefaultSampler'))
+test_evaluator = dict(
+    _scope_='mmdet',
+    ann_file='datasets/processed_v3.3/annotations/instances_test.json',
+    backend_args=None,
+    classwise=True,
+    format_only=False,
+    metric=[
+        'bbox',
+    ],
+    type='CocoMetric')
+test_pipeline = [
+    dict(_scope_='mmdet', backend_args=None, type='LoadImageFromFile'),
+    dict(_scope_='mmdet', keep_ratio=True, scale=(
+        1333,
+        800,
+    ), type='Resize'),
+    dict(_scope_='mmdet', type='LoadAnnotations', with_bbox=True),
+    dict(
+        _scope_='mmdet',
+        meta_keys=(
+            'img_id',
+            'img_path',
+            'ori_shape',
+            'img_shape',
+            'scale_factor',
+        ),
+        type='PackDetInputs'),
+]
+train_cfg = dict(
+    _scope_='mmdet', max_epochs=24, type='EpochBasedTrainLoop', val_interval=1)
+train_dataloader = dict(
+    batch_sampler=dict(_scope_='mmdet', type='AspectRatioBatchSampler'),
+    batch_size=2,
+    dataset=dict(
+        _scope_='mmdet',
+        ann_file='annotations/instances_train.json',
+        backend_args=None,
+        data_prefix=dict(img='images/train/'),
+        data_root='datasets/processed_v3.1/',
+        filter_cfg=dict(filter_empty_gt=True, min_size=32),
+        metainfo=dict(
+            classes=(
+                'plastic_bottle',
+                'glass_bottle',
+                'glass_jar',
+                'metal_can',
+                'carton',
+                'tetrapack',
+                'paper',
+                'plastic_bag',
+                'plastic_container',
+                'other',
+            ),
+            palette=[
+                (
+                    220,
+                    20,
+                    60,
+                ),
+                (
+                    119,
+                    11,
+                    32,
+                ),
+                (
+                    0,
+                    0,
+                    142,
+                ),
+                (
+                    0,
+                    0,
+                    230,
+                ),
+                (
+                    106,
+                    0,
+                    228,
+                ),
+                (
+                    0,
+                    60,
+                    100,
+                ),
+                (
+                    0,
+                    80,
+                    100,
+                ),
+                (
+                    0,
+                    0,
+                    70,
+                ),
+                (
+                    0,
+                    0,
+                    192,
+                ),
+                (
+                    250,
+                    170,
+                    30,
+                ),
+            ]),
+        pipeline=[
+            dict(backend_args=None, type='LoadImageFromFile'),
+            dict(type='LoadAnnotations', with_bbox=True),
+            dict(keep_ratio=True, scale=(
+                1333,
+                800,
+            ), type='Resize'),
+            dict(prob=0.5, type='RandomFlip'),
+            dict(type='PackDetInputs'),
+        ],
+        type='CocoDataset'),
+    num_workers=2,
+    persistent_workers=True,
+    sampler=dict(_scope_='mmdet', shuffle=True, type='DefaultSampler'))
+train_pipeline = [
+    dict(_scope_='mmdet', backend_args=None, type='LoadImageFromFile'),
+    dict(_scope_='mmdet', type='LoadAnnotations', with_bbox=True),
+    dict(_scope_='mmdet', keep_ratio=True, scale=(
+        1333,
+        800,
+    ), type='Resize'),
+    dict(_scope_='mmdet', prob=0.5, type='RandomFlip'),
+    dict(_scope_='mmdet', type='PackDetInputs'),
+]
+val_cfg = dict(_scope_='mmdet', type='ValLoop')
+val_dataloader = dict(
+    batch_size=1,
+    dataset=dict(
+        _scope_='mmdet',
+        ann_file='annotations/instances_val.json',
+        backend_args=None,
+        data_prefix=dict(img='images/val/'),
+        data_root='datasets/processed_v3.1/',
+        metainfo=dict(
+            classes=(
+                'plastic_bottle',
+                'glass_bottle',
+                'glass_jar',
+                'metal_can',
+                'carton',
+                'tetrapack',
+                'paper',
+                'plastic_bag',
+                'plastic_container',
+                'other',
+            ),
+            palette=[
+                (
+                    220,
+                    20,
+                    60,
+                ),
+                (
+                    119,
+                    11,
+                    32,
+                ),
+                (
+                    0,
+                    0,
+                    142,
+                ),
+                (
+                    0,
+                    0,
+                    230,
+                ),
+                (
+                    106,
+                    0,
+                    228,
+                ),
+                (
+                    0,
+                    60,
+                    100,
+                ),
+                (
+                    0,
+                    80,
+                    100,
+                ),
+                (
+                    0,
+                    0,
+                    70,
+                ),
+                (
+                    0,
+                    0,
+                    192,
+                ),
+                (
+                    250,
+                    170,
+                    30,
+                ),
+            ]),
+        pipeline=[
+            dict(backend_args=None, type='LoadImageFromFile'),
+            dict(keep_ratio=True, scale=(
+                1333,
+                800,
+            ), type='Resize'),
+            dict(type='LoadAnnotations', with_bbox=True),
+            dict(
+                meta_keys=(
+                    'img_id',
+                    'img_path',
+                    'ori_shape',
+                    'img_shape',
+                    'scale_factor',
+                ),
+                type='PackDetInputs'),
+        ],
+        test_mode=True,
+        type='CocoDataset'),
+    drop_last=False,
+    num_workers=2,
+    persistent_workers=True,
+    sampler=dict(_scope_='mmdet', shuffle=False, type='DefaultSampler'))
+val_evaluator = dict(
+    _scope_='mmdet',
+    ann_file='datasets/processed_v3.1/annotations/instances_val.json',
+    backend_args=None,
+    format_only=False,
+    metric=[
+        'bbox',
+    ],
+    type='CocoMetric')
+vis_backends = [
+    dict(_scope_='mmdet', type='LocalVisBackend'),
+]
+visualizer = dict(
+    _scope_='mmdet',
+    name='visualizer',
+    type='DetLocalVisualizer',
+    vis_backends=[
+        dict(type='LocalVisBackend'),
+    ])
+work_dir = 'experiments/work_dirs/faster_rcnn_r50_v33'
+
+08/15 12:38:06 - mmengine - INFO - Distributed training is not used, all SyncBatchNorm (SyncBN) layers in the model will be automatically reverted to BatchNormXd layers if they are used.
+08/15 12:38:06 - mmengine - INFO - Hooks will be executed in the following order:
+before_run:
+(VERY_HIGH   ) RuntimeInfoHook                    
+(BELOW_NORMAL) LoggerHook                         
+ -------------------- 
+before_train:
+(VERY_HIGH   ) RuntimeInfoHook                    
+(NORMAL      ) IterTimerHook                      
+(VERY_LOW    ) CheckpointHook                     
+ -------------------- 
+before_train_epoch:
+(VERY_HIGH   ) RuntimeInfoHook                    
+(NORMAL      ) IterTimerHook                      
+(NORMAL      ) DistSamplerSeedHook                
+ -------------------- 
+before_train_iter:
+(VERY_HIGH   ) RuntimeInfoHook                    
+(NORMAL      ) IterTimerHook                      
+ -------------------- 
+after_train_iter:
+(VERY_HIGH   ) RuntimeInfoHook                    
+(NORMAL      ) IterTimerHook                      
+(BELOW_NORMAL) LoggerHook                         
+(LOW         ) ParamSchedulerHook                 
+(VERY_LOW    ) CheckpointHook                     
+ -------------------- 
+after_train_epoch:
+(NORMAL      ) IterTimerHook                      
+(LOW         ) ParamSchedulerHook                 
+(VERY_LOW    ) CheckpointHook                     
+ -------------------- 
+before_val:
+(VERY_HIGH   ) RuntimeInfoHook                    
+ -------------------- 
+before_val_epoch:
+(NORMAL      ) IterTimerHook                      
+ -------------------- 
+before_val_iter:
+(NORMAL      ) IterTimerHook                      
+ -------------------- 
+after_val_iter:
+(NORMAL      ) IterTimerHook                      
+(NORMAL      ) DetVisualizationHook               
+(BELOW_NORMAL) LoggerHook                         
+ -------------------- 
+after_val_epoch:
+(VERY_HIGH   ) RuntimeInfoHook                    
+(NORMAL      ) IterTimerHook                      
+(BELOW_NORMAL) LoggerHook                         
+(LOW         ) ParamSchedulerHook                 
+(VERY_LOW    ) CheckpointHook                     
+ -------------------- 
+after_val:
+(VERY_HIGH   ) RuntimeInfoHook                    
+ -------------------- 
+after_train:
+(VERY_HIGH   ) RuntimeInfoHook                    
+(VERY_LOW    ) CheckpointHook                     
+ -------------------- 
+before_test:
+(VERY_HIGH   ) RuntimeInfoHook                    
+ -------------------- 
+before_test_epoch:
+(NORMAL      ) IterTimerHook                      
+ -------------------- 
+before_test_iter:
+(NORMAL      ) IterTimerHook                      
+ -------------------- 
+after_test_iter:
+(NORMAL      ) IterTimerHook                      
+(NORMAL      ) DetVisualizationHook               
+(BELOW_NORMAL) LoggerHook                         
+ -------------------- 
+after_test_epoch:
+(VERY_HIGH   ) RuntimeInfoHook                    
+(NORMAL      ) IterTimerHook                      
+(BELOW_NORMAL) LoggerHook                         
+ -------------------- 
+after_test:
+(VERY_HIGH   ) RuntimeInfoHook                    
+ -------------------- 
+after_run:
+(BELOW_NORMAL) LoggerHook                         
+ -------------------- 
+/home/tepa46/projects/multimodal-recognizer/.venv/lib/python3.12/site-packages/mmengine/runner/checkpoint.py:347: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  checkpoint = torch.load(filename, map_location=map_location)
+loading annotations into memory...
+Done (t=0.02s)
+creating index...
+index created!
+loading annotations into memory...
+Done (t=0.02s)
+creating index...
+index created!
+Loads checkpoint by local backend from path: experiments/work_dirs/faster_rcnn_r50_v33/epoch_17.pth
+08/15 12:38:06 - mmengine - INFO - Load checkpoint from experiments/work_dirs/faster_rcnn_r50_v33/epoch_17.pth
+08/15 12:38:08 - mmengine - INFO - Epoch(test) [  50/1513]    eta: 0:00:46  time: 0.0316  data_time: 0.0032  memory: 527  
+08/15 12:38:09 - mmengine - INFO - Epoch(test) [ 100/1513]    eta: 0:00:38  time: 0.0231  data_time: 0.0011  memory: 461  
+08/15 12:38:10 - mmengine - INFO - Epoch(test) [ 150/1513]    eta: 0:00:35  time: 0.0228  data_time: 0.0010  memory: 461  
+08/15 12:38:11 - mmengine - INFO - Epoch(test) [ 200/1513]    eta: 0:00:33  time: 0.0231  data_time: 0.0009  memory: 512  
+08/15 12:38:13 - mmengine - INFO - Epoch(test) [ 250/1513]    eta: 0:00:31  time: 0.0259  data_time: 0.0010  memory: 512  
+08/15 12:38:14 - mmengine - INFO - Epoch(test) [ 300/1513]    eta: 0:00:30  time: 0.0259  data_time: 0.0011  memory: 512  
+08/15 12:38:15 - mmengine - INFO - Epoch(test) [ 350/1513]    eta: 0:00:29  time: 0.0258  data_time: 0.0010  memory: 512  
+08/15 12:38:17 - mmengine - INFO - Epoch(test) [ 400/1513]    eta: 0:00:28  time: 0.0259  data_time: 0.0011  memory: 512  
+08/15 12:38:18 - mmengine - INFO - Epoch(test) [ 450/1513]    eta: 0:00:27  time: 0.0257  data_time: 0.0010  memory: 512  
+08/15 12:38:19 - mmengine - INFO - Epoch(test) [ 500/1513]    eta: 0:00:25  time: 0.0259  data_time: 0.0011  memory: 512  
+08/15 12:38:20 - mmengine - INFO - Epoch(test) [ 550/1513]    eta: 0:00:24  time: 0.0257  data_time: 0.0010  memory: 512  
+08/15 12:38:22 - mmengine - INFO - Epoch(test) [ 600/1513]    eta: 0:00:23  time: 0.0258  data_time: 0.0011  memory: 512  
+08/15 12:38:23 - mmengine - INFO - Epoch(test) [ 650/1513]    eta: 0:00:22  time: 0.0260  data_time: 0.0012  memory: 512  
+08/15 12:38:24 - mmengine - INFO - Epoch(test) [ 700/1513]    eta: 0:00:20  time: 0.0260  data_time: 0.0012  memory: 512  
+08/15 12:38:26 - mmengine - INFO - Epoch(test) [ 750/1513]    eta: 0:00:19  time: 0.0257  data_time: 0.0010  memory: 512  
+08/15 12:38:27 - mmengine - INFO - Epoch(test) [ 800/1513]    eta: 0:00:18  time: 0.0260  data_time: 0.0011  memory: 512  
+08/15 12:38:28 - mmengine - INFO - Epoch(test) [ 850/1513]    eta: 0:00:17  time: 0.0259  data_time: 0.0011  memory: 512  
+08/15 12:38:29 - mmengine - INFO - Epoch(test) [ 900/1513]    eta: 0:00:15  time: 0.0230  data_time: 0.0009  memory: 512  
+08/15 12:38:31 - mmengine - INFO - Epoch(test) [ 950/1513]    eta: 0:00:14  time: 0.0225  data_time: 0.0008  memory: 461  
+08/15 12:38:32 - mmengine - INFO - Epoch(test) [1000/1513]    eta: 0:00:12  time: 0.0226  data_time: 0.0008  memory: 461  
+08/15 12:38:33 - mmengine - INFO - Epoch(test) [1050/1513]    eta: 0:00:11  time: 0.0225  data_time: 0.0008  memory: 461  
+08/15 12:38:34 - mmengine - INFO - Epoch(test) [1100/1513]    eta: 0:00:10  time: 0.0225  data_time: 0.0008  memory: 461  
+08/15 12:38:35 - mmengine - INFO - Epoch(test) [1150/1513]    eta: 0:00:09  time: 0.0226  data_time: 0.0008  memory: 461  
+08/15 12:38:36 - mmengine - INFO - Epoch(test) [1200/1513]    eta: 0:00:07  time: 0.0226  data_time: 0.0008  memory: 461  
+08/15 12:38:37 - mmengine - INFO - Epoch(test) [1250/1513]    eta: 0:00:06  time: 0.0225  data_time: 0.0008  memory: 461  
+08/15 12:38:38 - mmengine - INFO - Epoch(test) [1300/1513]    eta: 0:00:05  time: 0.0225  data_time: 0.0008  memory: 461  
+08/15 12:38:40 - mmengine - INFO - Epoch(test) [1350/1513]    eta: 0:00:03  time: 0.0226  data_time: 0.0008  memory: 461  
+08/15 12:38:41 - mmengine - INFO - Epoch(test) [1400/1513]    eta: 0:00:02  time: 0.0226  data_time: 0.0008  memory: 461  
+08/15 12:38:42 - mmengine - INFO - Epoch(test) [1450/1513]    eta: 0:00:01  time: 0.0191  data_time: 0.0008  memory: 461  
+08/15 12:38:43 - mmengine - INFO - Epoch(test) [1500/1513]    eta: 0:00:00  time: 0.0181  data_time: 0.0007  memory: 384  
+08/15 12:38:43 - mmengine - INFO - Evaluating bbox...
+Loading and preparing results...
+DONE (t=0.01s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *bbox*
+DONE (t=0.55s).
+Accumulating evaluation results...
+DONE (t=0.12s).
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.381
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=1000 ] = 0.464
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=1000 ] = 0.409
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.052
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.156
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.455
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.526
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=300 ] = 0.526
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=1000 ] = 0.526
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.104
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.302
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.627
+08/15 12:38:44 - mmengine - INFO - 
++-------------------+-------+--------+--------+-------+-------+-------+
+| category          | mAP   | mAP_50 | mAP_75 | mAP_s | mAP_m | mAP_l |
++-------------------+-------+--------+--------+-------+-------+-------+
+| plastic_bottle    | 0.628 | 0.717  | 0.641  | 0.124 | 0.164 | 0.901 |
+| glass_bottle      | 0.82  | 0.864  | 0.835  | 0.055 | 0.166 | 0.883 |
+| glass_jar         | 0.169 | 0.209  | 0.209  | 0.0   | 0.21  | 0.171 |
+| metal_can         | 0.758 | 0.851  | 0.809  | 0.145 | 0.275 | 0.827 |
+| carton            | 0.124 | 0.181  | 0.14   | 0.0   | 0.054 | 0.141 |
+| tetrapack         | 0.061 | 0.073  | 0.073  | 0.0   | 0.0   | 0.13  |
+| paper             | 0.066 | 0.095  | 0.08   | 0.009 | 0.017 | 0.12  |
+| plastic_bag       | 0.423 | 0.643  | 0.465  | 0.056 | 0.222 | 0.457 |
+| plastic_container | 0.589 | 0.715  | 0.658  | 0.063 | 0.278 | 0.646 |
+| other             | 0.169 | 0.297  | 0.179  | 0.072 | 0.173 | 0.277 |
++-------------------+-------+--------+--------+-------+-------+-------+
+08/15 12:38:44 - mmengine - INFO - bbox_mAP_copypaste: 0.381 0.464 0.409 0.052 0.156 0.455
+08/15 12:38:44 - mmengine - INFO - Epoch(test) [1513/1513]    coco/plastic_bottle_precision: 0.6280  coco/glass_bottle_precision: 0.8200  coco/glass_jar_precision: 0.1690  coco/metal_can_precision: 0.7580  coco/carton_precision: 0.1240  coco/tetrapack_precision: 0.0610  coco/paper_precision: 0.0660  coco/plastic_bag_precision: 0.4230  coco/plastic_container_precision: 0.5890  coco/other_precision: 0.1690  coco/bbox_mAP: 0.3810  coco/bbox_mAP_50: 0.4640  coco/bbox_mAP_75: 0.4090  coco/bbox_mAP_s: 0.0520  coco/bbox_mAP_m: 0.1560  coco/bbox_mAP_l: 0.4550  data_time: 0.0010  time: 0.0240
+Testing finished successfully.

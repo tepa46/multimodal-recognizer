@@ -1,0 +1,7 @@
+7c1f634a2202c2bc0599546bf0f92f44  cascade_mask_rcnn_r50_v33/epoch_18.pth
+ab187c9c64db4f244ca77364abfadaa9  faster_rcnn_r50_v33/epoch_17.pth
+07550cde56389f3e31e54b0f5f8ea10b  htc_r50_v33/epoch_19.pth
+c1f47a7f6b401ab434afd8f3f98ebc1a  htc_r50_v33_noreal/epoch_19.pth
+1844ce4eb335c9c05a4362e5a2aee4e6  htc_x101_v33/epoch_17.pth
+f5568c864e87c0103d34540f652211f3  htc_x101_v33_noreal/epoch_17.pth
+33f1549d83390adc775fc776a7340917  mask_rcnn_r50_v33/epoch_20.pth
