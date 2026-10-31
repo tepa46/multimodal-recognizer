@@ -1,0 +1,22 @@
+\begin{table}[!tb]
+\centering
+\caption{Hybrid-v3.3 composition: the five training sources and the
+stratified 70/15/15 split. BeachLitter is held out entirely.}
+\label{tab:dataset}
+\small
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{lrr}
+\toprule
+Source & Images & Annotations \\
+\midrule
+TACO~\cite{proenca2020taco}                & 1{,}500 & 4{,}784  \\
+ZeroWaste-f~\cite{bashkirova2022zerowaste} & 4{,}208 & 14{,}872 \\
+Drinking Waste~\cite{drinkingwaste2021}    & 3{,}679 & 3{,}679  \\
+DWSD~\cite{dwsd2024}                       & 698     & 4{,}626  \\
+real495 (ours, train split only)           & 128     & 288      \\
+\midrule
+\textbf{Total}  & \textbf{10{,}213} & \textbf{28{,}249} \\
+\bottomrule
+\multicolumn{3}{l}{\footnotesize train 7,187 / val 1,513 / test 1,513}
+\end{tabular}
+\end{table}

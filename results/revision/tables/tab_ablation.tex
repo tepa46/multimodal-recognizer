@@ -1,0 +1,19 @@
+\begin{table*}[tb]
+\centering
+\caption{\revcap{Contribution of the density-derived input $\hat{m}$ and of
+the gates ($\lambda=0$). Each row trains the head from scratch with the
+stated inputs.}}
+\label{tab:ablation}
+\begin{tabular}{lcrrrrr}
+\toprule
+Head & $\hat{m}$ input & F1 & FPR & heavy-fill & foreign-object & wrong-class \\
+\midrule
+MLP & without & 0.676\,(0.008) & 0.097\,(0.005) & 0.836 & 0.415 & 0.762 \\
+MLP & with & 0.716\,(0.016) & 0.076\,(0.009) & 0.868 & 0.462 & 0.756 \\
+projections & without & 0.684\,(0.010) & 0.104\,(0.005) & 0.860 & 0.462 & 0.755 \\
+projections & with & 0.720\,(0.015) & 0.095\,(0.014) & 0.885 & 0.529 & 0.785 \\
+projections + gates & without & 0.674\,(0.012) & 0.112\,(0.004) & 0.865 & 0.459 & 0.747 \\
+projections + gates & with & 0.714\,(0.017) & 0.099\,(0.013) & 0.884 & 0.526 & 0.778 \\
+\bottomrule
+\end{tabular}
+\end{table*}

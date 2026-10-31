@@ -12,6 +12,8 @@ checkpoints/
 
 models/detectors/*
 !models/detectors/CHECKSUMS.md5
+models/*.tar.gz
+models/*.tar.gz.md5
 
 datasets/raw/
 datasets/processed_v3.3/images/

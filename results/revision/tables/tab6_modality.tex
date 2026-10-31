@@ -1,0 +1,17 @@
+\begin{table*}[tb]
+\centering
+\caption{\revcap{Modality ablation (projection head, $\lambda=5$, main
+partition): each row zeroes one input and retrains the head. Best per
+column in bold.}}
+\label{tab:modality}
+\begin{tabular}{lrrrrr}
+\toprule
+Input removed & Test F1 $\uparrow$ & Test FPR $\downarrow$ & heavy-fill rec $\uparrow$ & foreign-object rec $\uparrow$ & wrong-class rec $\uparrow$ \\
+\midrule
+none (full) & \textbf{0.726} & 0.091 & 0.877 & 0.526 & 0.798 \\
+visual (RGB) & 0.668 & \textbf{0.069} & \textbf{0.889} & \textbf{0.581} & 0.369 \\
+volume (box proxy) & 0.715 & 0.091 & 0.863 & 0.520 & 0.770 \\
+mass & 0.408 & 0.229 & 0.222 & 0.238 & \textbf{0.848} \\
+\bottomrule
+\end{tabular}
+\end{table*}

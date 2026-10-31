@@ -1,0 +1,645 @@
+{
+ "build_command": "python scripts/build_data/build_hybrid_coco.py --raw-dir datasets/raw/ --output-dir datasets/processed_v3.3/ --sources taco zerowaste drinking_waste dwsd real495 --exclude beach_litter --zerowaste-cardboard-frac 0.33",
+ "class_mapping": "configs/class_mapping.yaml",
+ "unified_classes": [
+  "plastic_bottle",
+  "glass_bottle",
+  "glass_jar",
+  "metal_can",
+  "carton",
+  "tetrapack",
+  "paper",
+  "plastic_bag",
+  "plastic_container",
+  "other"
+ ],
+ "released_source_names": {
+  "real300": "real495 (earlier name of the same set; file names real300_*)"
+ },
+ "excluded_sources": {
+  "beach_litter": "held out of training entirely; evaluation only"
+ },
+ "split": {
+  "ratios": [
+   0.7,
+   0.15,
+   0.15
+  ],
+  "stratified_by": "most frequent class in the image",
+  "random_state": 42,
+  "real495": "train frames forced into train; held-out frames withheld"
+ },
+ "sources": {
+  "taco": {
+   "raw_files": [
+    "taco/data/annotations.json"
+   ],
+   "raw_images": 1500,
+   "raw_annotations": 4784,
+   "remapping": [
+    {
+     "original": "Cigarette",
+     "unified": "other",
+     "annotations": 667
+    },
+    {
+     "original": "Unlabeled litter",
+     "unified": "other",
+     "annotations": 517
+    },
+    {
+     "original": "Plastic film",
+     "unified": "plastic_bag",
+     "annotations": 451
+    },
+    {
+     "original": "Clear plastic bottle",
+     "unified": "plastic_bottle",
+     "annotations": 285
+    },
+    {
+     "original": "Other plastic",
+     "unified": "other",
+     "annotations": 273
+    },
+    {
+     "original": "Other plastic wrapper",
+     "unified": "plastic_bag",
+     "annotations": 260
+    },
+    {
+     "original": "Drink can",
+     "unified": "metal_can",
+     "annotations": 229
+    },
+    {
+     "original": "Plastic bottle cap",
+     "unified": "other",
+     "annotations": 209
+    },
+    {
+     "original": "Plastic straw",
+     "unified": "other",
+     "annotations": 157
+    },
+    {
+     "original": "Broken glass",
+     "unified": "other",
+     "annotations": 138
+    },
+    {
+     "original": "Styrofoam piece",
+     "unified": "other",
+     "annotations": 112
+    },
+    {
+     "original": "Disposable plastic cup",
+     "unified": "plastic_container",
+     "annotations": 104
+    },
+    {
+     "original": "Glass bottle",
+     "unified": "glass_bottle",
+     "annotations": 104
+    },
+    {
+     "original": "Pop tab",
+     "unified": "other",
+     "annotations": 99
+    },
+    {
+     "original": "Other carton",
+     "unified": "carton",
+     "annotations": 93
+    },
+    {
+     "original": "Normal paper",
+     "unified": "paper",
+     "annotations": 82
+    },
+    {
+     "original": "Metal bottle cap",
+     "unified": "other",
+     "annotations": 80
+    },
+    {
+     "original": "Plastic lid",
+     "unified": "other",
+     "annotations": 77
+    },
+    {
+     "original": "Paper cup",
+     "unified": "paper",
+     "annotations": 67
+    },
+    {
+     "original": "Corrugated carton",
+     "unified": "carton",
+     "annotations": 64
+    },
+    {
+     "original": "Aluminium foil",
+     "unified": "other",
+     "annotations": 62
+    },
+    {
+     "original": "Single-use carrier bag",
+     "unified": "plastic_bag",
+     "annotations": 61
+    },
+    {
+     "original": "Other plastic bottle",
+     "unified": "plastic_bottle",
+     "annotations": 50
+    },
+    {
+     "original": "Drink carton",
+     "unified": "tetrapack",
+     "annotations": 45
+    },
+    {
+     "original": "Tissues",
+     "unified": "paper",
+     "annotations": 42
+    },
+    {
+     "original": "Crisp packet",
+     "unified": "plastic_bag",
+     "annotations": 39
+    },
+    {
+     "original": "Disposable food container",
+     "unified": "plastic_container",
+     "annotations": 38
+    },
+    {
+     "original": "Plastic utensils",
+     "unified": "other",
+     "annotations": 37
+    },
+    {
+     "original": "Food Can",
+     "unified": "metal_can",
+     "annotations": 34
+    },
+    {
+     "original": "Garbage bag",
+     "unified": "plastic_bag",
+     "annotations": 31
+    },
+    {
+     "original": "Meal carton",
+     "unified": "carton",
+     "annotations": 30
+    },
+    {
+     "original": "Rope & strings",
+     "unified": "other",
+     "annotations": 29
+    },
+    {
+     "original": "Paper bag",
+     "unified": "paper",
+     "annotations": 27
+    },
+    {
+     "original": "Scrap metal",
+     "unified": "metal_can",
+     "annotations": 20
+    },
+    {
+     "original": "Foam food container",
+     "unified": "plastic_container",
+     "annotations": 15
+    },
+    {
+     "original": "Foam cup",
+     "unified": "other",
+     "annotations": 13
+    },
+    {
+     "original": "Magazine paper",
+     "unified": "paper",
+     "annotations": 12
+    },
+    {
+     "original": "Wrapping paper",
+     "unified": "paper",
+     "annotations": 12
+    },
+    {
+     "original": "Egg carton",
+     "unified": "carton",
+     "annotations": 11
+    },
+    {
+     "original": "Aerosol",
+     "unified": "metal_can",
+     "annotations": 10
+    },
+    {
+     "original": "Metal lid",
+     "unified": "other",
+     "annotations": 10
+    },
+    {
+     "original": "Spread tub",
+     "unified": "plastic_container",
+     "annotations": 9
+    },
+    {
+     "original": "Food waste",
+     "unified": "other",
+     "annotations": 8
+    },
+    {
+     "original": "Shoe",
+     "unified": "other",
+     "annotations": 7
+    },
+    {
+     "original": "Squeezable tube",
+     "unified": "plastic_container",
+     "annotations": 7
+    },
+    {
+     "original": "Aluminium blister pack",
+     "unified": "other",
+     "annotations": 6
+    },
+    {
+     "original": "Glass cup",
+     "unified": "other",
+     "annotations": 6
+    },
+    {
+     "original": "Glass jar",
+     "unified": "glass_jar",
+     "annotations": 6
+    },
+    {
+     "original": "Other plastic container",
+     "unified": "plastic_container",
+     "annotations": 6
+    },
+    {
+     "original": "Six pack rings",
+     "unified": "other",
+     "annotations": 5
+    },
+    {
+     "original": "Toilet tube",
+     "unified": "carton",
+     "annotations": 5
+    },
+    {
+     "original": "Paper straw",
+     "unified": "other",
+     "annotations": 4
+    },
+    {
+     "original": "Plastic glooves",
+     "unified": "other",
+     "annotations": 4
+    },
+    {
+     "original": "Tupperware",
+     "unified": "plastic_container",
+     "annotations": 4
+    },
+    {
+     "original": "Pizza box",
+     "unified": "carton",
+     "annotations": 3
+    },
+    {
+     "original": "Polypropylene bag",
+     "unified": "plastic_bag",
+     "annotations": 3
+    },
+    {
+     "original": "Battery",
+     "unified": "other",
+     "annotations": 2
+    },
+    {
+     "original": "Other plastic cup",
+     "unified": "plastic_container",
+     "annotations": 2
+    },
+    {
+     "original": "Carded blister pack",
+     "unified": "other",
+     "annotations": 1
+    }
+   ],
+   "excluded": {
+    "orphaned_annotations": 0
+   },
+   "released": {
+    "train": {
+     "images": 1078,
+     "annotations": 3481
+    },
+    "val": {
+     "images": 221,
+     "annotations": 691
+    },
+    "test": {
+     "images": 201,
+     "annotations": 612
+    },
+    "total": {
+     "images": 1500,
+     "annotations": 4784
+    }
+   }
+  },
+  "zerowaste": {
+   "raw_files": [
+    "zerowaste/splits_final_deblurred/train/labels.json",
+    "zerowaste/splits_final_deblurred/val/labels.json",
+    "zerowaste/splits_final_deblurred/test/labels.json"
+   ],
+   "raw_images": 4503,
+   "raw_annotations": 26766,
+   "remapping": [
+    {
+     "original": "cardboard",
+     "unified": "carton",
+     "annotations": 17751
+    },
+    {
+     "original": "soft_plastic",
+     "unified": "plastic_bag",
+     "annotations": 6864
+    },
+    {
+     "original": "rigid_plastic",
+     "unified": "plastic_container",
+     "annotations": 1769
+    },
+    {
+     "original": "metal",
+     "unified": "metal_can",
+     "annotations": 382
+    }
+   ],
+   "excluded": {
+    "orphaned_annotations": 0,
+    "cardboard_subsample_annotations": 11894,
+    "images_left_without_annotations": 295,
+    "cardboard_fraction_kept": 0.33
+   },
+   "released": {
+    "train": {
+     "images": 2933,
+     "annotations": 10306
+    },
+    "val": {
+     "images": 620,
+     "annotations": 2290
+    },
+    "test": {
+     "images": 655,
+     "annotations": 2276
+    },
+    "total": {
+     "images": 4208,
+     "annotations": 14872
+    }
+   }
+  },
+  "drinking_waste": {
+   "raw_files": [
+    "drinking_waste/annotations/instances_sam.json"
+   ],
+   "raw_images": 3679,
+   "raw_annotations": 3679,
+   "remapping": [
+    {
+     "original": "plastic_bottle",
+     "unified": "plastic_bottle",
+     "annotations": 1508
+    },
+    {
+     "original": "metal_can",
+     "unified": "metal_can",
+     "annotations": 1060
+    },
+    {
+     "original": "glass_bottle",
+     "unified": "glass_bottle",
+     "annotations": 561
+    },
+    {
+     "original": "plastic_container",
+     "unified": "plastic_container",
+     "annotations": 550
+    }
+   ],
+   "excluded": {
+    "orphaned_annotations": 0
+   },
+   "released": {
+    "train": {
+     "images": 2575,
+     "annotations": 2575
+    },
+    "val": {
+     "images": 551,
+     "annotations": 551
+    },
+    "test": {
+     "images": 553,
+     "annotations": 553
+    },
+    "total": {
+     "images": 3679,
+     "annotations": 3679
+    }
+   }
+  },
+  "dwsd": {
+   "raw_files": [
+    "dwsd/DSWD/instances.json"
+   ],
+   "raw_images": 698,
+   "raw_annotations": 4626,
+   "remapping": [
+    {
+     "original": "other",
+     "unified": "other",
+     "annotations": 2632
+    },
+    {
+     "original": "plastic_bottle",
+     "unified": "plastic_bottle",
+     "annotations": 1212
+    },
+    {
+     "original": "paper",
+     "unified": "paper",
+     "annotations": 308
+    },
+    {
+     "original": "metal_can",
+     "unified": "metal_can",
+     "annotations": 120
+    },
+    {
+     "original": "tetrapack",
+     "unified": "tetrapack",
+     "annotations": 77
+    },
+    {
+     "original": "carton",
+     "unified": "carton",
+     "annotations": 75
+    },
+    {
+     "original": "plastic_bag",
+     "unified": "plastic_bag",
+     "annotations": 74
+    },
+    {
+     "original": "plastic_container",
+     "unified": "plastic_container",
+     "annotations": 56
+    },
+    {
+     "original": "glass_bottle",
+     "unified": "glass_bottle",
+     "annotations": 48
+    },
+    {
+     "original": "glass_jar",
+     "unified": "glass_jar",
+     "annotations": 24
+    }
+   ],
+   "excluded": {
+    "orphaned_annotations": 0
+   },
+   "released": {
+    "train": {
+     "images": 473,
+     "annotations": 3063
+    },
+    "val": {
+     "images": 121,
+     "annotations": 740
+    },
+    "test": {
+     "images": 104,
+     "annotations": 823
+    },
+    "total": {
+     "images": 698,
+     "annotations": 4626
+    }
+   }
+  },
+  "real495": {
+   "raw_files": [
+    "datasets/real495/annotations/instances_all.json"
+   ],
+   "raw_images": 215,
+   "raw_annotations": 495,
+   "remapping": [
+    {
+     "original": "other",
+     "unified": "other",
+     "annotations": 123
+    },
+    {
+     "original": "plastic_bag",
+     "unified": "plastic_bag",
+     "annotations": 70
+    },
+    {
+     "original": "plastic_bottle",
+     "unified": "plastic_bottle",
+     "annotations": 49
+    },
+    {
+     "original": "plastic_container",
+     "unified": "plastic_container",
+     "annotations": 49
+    },
+    {
+     "original": "metal_can",
+     "unified": "metal_can",
+     "annotations": 47
+    },
+    {
+     "original": "carton",
+     "unified": "carton",
+     "annotations": 41
+    },
+    {
+     "original": "glass_jar",
+     "unified": "glass_jar",
+     "annotations": 41
+    },
+    {
+     "original": "tetrapack",
+     "unified": "tetrapack",
+     "annotations": 27
+    },
+    {
+     "original": "glass_bottle",
+     "unified": "glass_bottle",
+     "annotations": 25
+    },
+    {
+     "original": "paper",
+     "unified": "paper",
+     "annotations": 23
+    }
+   ],
+   "excluded": {
+    "orphaned_annotations": 0,
+    "held_out_frames": 87,
+    "held_out_annotations": 207
+   },
+   "released": {
+    "train": {
+     "images": 128,
+     "annotations": 288
+    },
+    "val": {
+     "images": 0,
+     "annotations": 0
+    },
+    "test": {
+     "images": 0,
+     "annotations": 0
+    },
+    "total": {
+     "images": 128,
+     "annotations": 288
+    }
+   }
+  }
+ },
+ "totals": {
+  "train": {
+   "images": 7187,
+   "annotations": 19713
+  },
+  "val": {
+   "images": 1513,
+   "annotations": 4272
+  },
+  "test": {
+   "images": 1513,
+   "annotations": 4264
+  }
+ },
+ "rebuild_matches_release": {
+  "train": true,
+  "val": true,
+  "test": true
+ }
+}

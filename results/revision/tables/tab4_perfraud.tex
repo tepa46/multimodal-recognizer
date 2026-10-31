@@ -1,0 +1,20 @@
+\begin{table*}[tb]
+\centering
+\caption{\revcap{Recall by generated fraud scenario and false-positive rate on
+legitimate items. Best per column among the learned variants in bold.}}
+\label{tab:perfraud}
+\begin{tabular}{lrrrr}
+\toprule
+Variant & FPR, legitimate $\downarrow$ & heavy-fill $\uparrow$ & foreign-object $\uparrow$ & wrong-class $\uparrow$ \\
+\midrule
+Density check ($\tau$ selected on validation) & 0.127\,(0.028) & 0.896\,(0.014) & 0.585\,(0.079) & 0.139\,(0.036) \\
+MLP & \textbf{0.076\,(0.009)} & 0.868\,(0.021) & 0.462\,(0.019) & 0.756\,(0.012) \\
+Projection head, $\lambda{=}0$ & 0.095\,(0.014) & 0.885\,(0.014) & 0.529\,(0.014) & 0.785\,(0.022) \\
+Projection head + gates, Eq.~\eqref{eq:gated}, $\lambda{=}0$ & 0.099\,(0.013) & 0.884\,(0.013) & 0.526\,(0.018) & 0.778\,(0.013) \\
+Projection head, $\lambda{=}0.5$ & 0.097\,(0.015) & 0.889\,(0.014) & 0.541\,(0.016) & 0.800\,(0.019) \\
+Projection head, $\lambda{=}1$ & 0.096\,(0.015) & 0.889\,(0.012) & 0.544\,(0.013) & 0.799\,(0.022) \\
+Projection head, $\lambda{=}2$ & 0.096\,(0.011) & 0.890\,(0.013) & \textbf{0.547\,(0.022)} & 0.801\,(0.010) \\
+Projection head, $\lambda{=}5$$^{a}$ & 0.095\,(0.014) & \textbf{0.890\,(0.013)} & 0.546\,(0.023) & \textbf{0.803\,(0.018)} \\
+\bottomrule
+\end{tabular}
+\end{table*}

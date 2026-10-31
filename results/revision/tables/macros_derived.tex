@@ -1,0 +1,6 @@
+% Numbers derived from tables/macros_numbers.tex. Expanded once with \edef,
+% so they read as plain digits inside \hl.
+% Detector confusions on real495 that pass the density check at the
+% tolerance that rejects one correct recognition in ten.
+\edef\nSnXPass{\the\numexpr\nSnXConf-\nSnXFlagTen\relax}
+\edef\nSnRPass{\the\numexpr\nSnRConf-\nSnRFlagTen\relax}

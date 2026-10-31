@@ -19,10 +19,11 @@ from src.models.multimodal_fusion import (  # noqa: E402
     load_density_config, density_lookup_tensor,
 )
 from scripts.fusion.train_fusion import (  # noqa: E402
+    model_kwargs,
     CLASS_NAMES, TuplesDataset, collate_fn, load_or_build_roi_cache,
 )
 from scripts.fusion.eval_fraud import (  # noqa: E402
-    collect_predictions, per_type_breakdown,
+    collect_predictions, per_type_breakdown, rule_tolerance_grid,
 )
 from scripts.fusion.run_fusion_stats import sweep_threshold_on_scores  # noqa: E402
 
@@ -58,6 +59,23 @@ def main() -> None:
     parser.add_argument("--sigma-rho", type=float, default=0.2)
     parser.add_argument("--n-draws", type=int, default=10)
     parser.add_argument("--seed", type=int, default=123)
+    parser.add_argument("--density-yaml", type=Path,
+                        default=Path("configs/material_density.yaml"),
+                        help="Density table loaded into the models and used by "
+                             "the rule when the tuples carry no explicit expected "
+                             "mass. For calibrated tuples pass the SAME dev "
+                             "calibration yaml the tuples were generated from.")
+    parser.add_argument("--dropout", type=float, default=0.3,
+                        help="Dropout in the fraud head (submitted: 0.3).")
+    parser.add_argument("--input-repr", choices=["raw", "log"], default="raw",
+                        help="Scalar input representation of the learned heads "
+                             "(see MultimodalFusion).")
+    parser.add_argument("--no-expected-mass", action="store_true",
+                        help="Ablation: drop m_hat from the learned heads' inputs.")
+    parser.add_argument("--gate-input", choices=["vdm", "vdmc", "vdmc+r"], default="vdm",
+                        help="Inputs of the gate network (see MultimodalFusion).")
+    parser.add_argument("--no-gate", action="store_true",
+                        help="Ablation: same projections, no sigmoid gates.")
     parser.add_argument("--device", default="cuda")
     parser.add_argument("--output-json", type=Path,
                         default=Path("experiments/fusion/density_perturbation_v33.json"))
@@ -78,13 +96,13 @@ def main() -> None:
                              batch_size=1024, shuffle=False,
                              collate_fn=collate_fn)
 
-    cfg = load_density_config("configs/material_density.yaml")
+    cfg = load_density_config(args.density_yaml)
     rho0 = density_lookup_tensor(cfg["densities"], list(CLASS_NAMES))
 
     # ---------------- unperturbed operating points ----------------
     # Rule: tau* on unperturbed val. Gated: threshold swept on unperturbed
     # val scores (deployment fixes the threshold before densities drift).
-    rule_grid = np.linspace(0.05, 0.5, 19)
+    rule_grid = rule_tolerance_grid()
     learned_grid = np.linspace(0.05, 0.95, 91)
 
     val_pack = collect_predictions(None, rho0, val_loader, device)
@@ -92,7 +110,7 @@ def main() -> None:
     test_pack0 = collect_predictions(None, rho0, test_loader, device)
     rule_base = per_type_breakdown(*test_pack0, rule_tau)
 
-    model = build_fusion_model("gated").to(device)
+    model = build_fusion_model("gated", density_yaml=args.density_yaml, **model_kwargs(args)).to(device)
     state = torch.load(args.gated_ckpt, map_location=device, weights_only=True)
     model.load_state_dict(state["state_dict"])
     model.eval()
@@ -113,17 +131,15 @@ def main() -> None:
     for i in range(args.n_draws):
         factors = np.exp(rng.normal(0.0, args.sigma_rho, len(CLASS_NAMES)))
         factors_log.append([float(x) for x in factors])
-        rho_hat = rho0 * torch.tensor(factors, dtype=torch.float32)
+        scale = torch.tensor(factors, dtype=torch.float32)
 
-        # rule with perturbed lookup
-        tpack = collect_predictions(None, rho_hat, test_loader, device)
+        tpack = collect_predictions(None, rho0, test_loader, device,
+                                    expected_scale=scale)
         rule_bd.append(per_type_breakdown(*tpack, rule_tau))
 
-        # gated with perturbed lookup (expected-mass input feature)
-        model.density_table.copy_(rho_hat.to(device))
-        gpack = collect_predictions(model, None, test_loader, device)
+        gpack = collect_predictions(model, None, test_loader, device,
+                                    expected_scale=scale)
         gated_bd.append(per_type_breakdown(*gpack, gated_tau))
-        model.density_table.copy_(rho0.to(device))
 
         print(f"  draw {i+1:2d}/{args.n_draws}: "
               f"rule F1={rule_bd[-1]['overall']['f1']:.4f} | "

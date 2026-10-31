@@ -1,0 +1,56 @@
+{
+ "label": "htc_r50",
+ "n_normal": 365,
+ "n_localised": 291,
+ "n_correct": 161,
+ "n_confused": 130,
+ "auc_confused_vs_correct": 0.8457955088389871,
+ "at_tau_0.25": {
+  "confusions_flagged": 122,
+  "correct_rejected": 130
+ },
+ "at_false_reject_5": {
+  "tau": 7.56179044161715,
+  "confusions_flagged": 73,
+  "share": 0.5615384615384615
+ },
+ "at_false_reject_10": {
+  "tau": 7.56179044161715,
+  "confusions_flagged": 73,
+  "share": 0.5615384615384615
+ },
+ "at_false_reject_20": {
+  "tau": 3.3760560274093923,
+  "confusions_flagged": 78,
+  "share": 0.6
+ },
+ "confused_specimens": 17,
+ "specimens_flagged_at_0.25": 13,
+ "specimens_never_flagged_at_0.25": 0,
+ "confusion_pairs_top": [
+  [
+   "other->metal_can",
+   33
+  ],
+  [
+   "glass_jar->plastic_container",
+   17
+  ],
+  [
+   "paper->carton",
+   10
+  ],
+  [
+   "other->carton",
+   10
+  ],
+  [
+   "plastic_container->other",
+   7
+  ],
+  [
+   "tetrapack->metal_can",
+   6
+  ]
+ ]
+}

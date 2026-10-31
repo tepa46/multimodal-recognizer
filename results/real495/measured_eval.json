@@ -1,0 +1,174 @@
+{
+ "n_rows": 495,
+ "n_specimens": 25,
+ "protocols": {
+  "submitted_in_sample": {
+   "n_scored": 495,
+   "n_tampered": 130,
+   "n_intact": 365,
+   "auc": 0.9329188619599579,
+   "fpr_at_tau_0.25": 0.4931506849315068,
+   "recall_at_fpr_5": 0.7384615384615385,
+   "tau_at_fpr_5": 4.94732370433305,
+   "recall_at_fpr_10": 0.823076923076923,
+   "tau_at_fpr_10": 1.3281802942819891,
+   "recall_at_fpr_20": 0.823076923076923,
+   "tau_at_fpr_20": 0.9349258408533667,
+   "auc_ci95": [
+    0.8237693389592123,
+    1.0
+   ],
+   "recall_at_fpr_10_ci95": [
+    0.5328947368421053,
+    1.0
+   ],
+   "per_class_intact": {
+    "plastic_bottle": {
+     "n": 19,
+     "fpr_tau_0.25": 0.05263157894736842,
+     "fpr_tau_fpr10": 0.0
+    },
+    "glass_bottle": {
+     "n": 14,
+     "fpr_tau_0.25": 0.0,
+     "fpr_tau_fpr10": 0.0
+    },
+    "glass_jar": {
+     "n": 26,
+     "fpr_tau_0.25": 0.0,
+     "fpr_tau_fpr10": 0.0
+    },
+    "metal_can": {
+     "n": 23,
+     "fpr_tau_0.25": 0.0,
+     "fpr_tau_fpr10": 0.0
+    },
+    "carton": {
+     "n": 33,
+     "fpr_tau_0.25": 0.48484848484848486,
+     "fpr_tau_fpr10": 0.0
+    },
+    "tetrapack": {
+     "n": 13,
+     "fpr_tau_0.25": 0.0,
+     "fpr_tau_fpr10": 0.0
+    },
+    "paper": {
+     "n": 20,
+     "fpr_tau_0.25": 0.4,
+     "fpr_tau_fpr10": 0.0
+    },
+    "plastic_bag": {
+     "n": 53,
+     "fpr_tau_0.25": 0.8301886792452831,
+     "fpr_tau_fpr10": 0.18867924528301888
+    },
+    "plastic_container": {
+     "n": 41,
+     "fpr_tau_0.25": 0.4878048780487805,
+     "fpr_tau_fpr10": 0.4634146341463415
+    },
+    "other": {
+     "n": 123,
+     "fpr_tau_0.25": 0.7398373983739838,
+     "fpr_tau_fpr10": 0.0
+    }
+   }
+  },
+  "real495_leave_one_specimen_out": {
+   "n_scored": 402,
+   "n_tampered": 90,
+   "n_intact": 312,
+   "auc": 0.9176638176638177,
+   "fpr_at_tau_0.25": 0.9262820512820513,
+   "recall_at_fpr_5": 0.9111111111111111,
+   "tau_at_fpr_5": 4.935537190082644,
+   "recall_at_fpr_10": 0.9111111111111111,
+   "tau_at_fpr_10": 2.467706366988339,
+   "recall_at_fpr_20": 0.9111111111111111,
+   "tau_at_fpr_20": 1.9774769230769238,
+   "auc_ci95": [
+    0.7142857142857143,
+    1.0
+   ],
+   "recall_at_fpr_10_ci95": [
+    0.7037037037037037,
+    1.0
+   ],
+   "per_class_intact": {}
+  },
+  "calibration_89_specimens": {
+   "n_scored": 495,
+   "n_tampered": 130,
+   "n_intact": 365,
+   "auc": 0.9489146469968388,
+   "fpr_at_tau_0.25": 0.8136986301369863,
+   "recall_at_fpr_5": 0.7153846153846154,
+   "tau_at_fpr_5": 8.641873278236913,
+   "recall_at_fpr_10": 0.7846153846153846,
+   "tau_at_fpr_10": 3.427250612972971,
+   "recall_at_fpr_20": 0.7846153846153846,
+   "tau_at_fpr_20": 3.203293538740808,
+   "auc_ci95": [
+    0.8778823095369858,
+    0.9968947368421053
+   ],
+   "recall_at_fpr_10_ci95": [
+    0.48677248677248675,
+    1.0
+   ],
+   "per_class_intact": {
+    "plastic_bottle": {
+     "n": 19,
+     "fpr_tau_0.25": 0.9473684210526315,
+     "fpr_tau_fpr10": 0.0
+    },
+    "glass_bottle": {
+     "n": 14,
+     "fpr_tau_0.25": 0.0,
+     "fpr_tau_fpr10": 0.0
+    },
+    "glass_jar": {
+     "n": 26,
+     "fpr_tau_0.25": 1.0,
+     "fpr_tau_fpr10": 0.0
+    },
+    "metal_can": {
+     "n": 23,
+     "fpr_tau_0.25": 0.0,
+     "fpr_tau_fpr10": 0.0
+    },
+    "carton": {
+     "n": 33,
+     "fpr_tau_0.25": 1.0,
+     "fpr_tau_fpr10": 0.5151515151515151
+    },
+    "tetrapack": {
+     "n": 13,
+     "fpr_tau_0.25": 1.0,
+     "fpr_tau_fpr10": 0.0
+    },
+    "paper": {
+     "n": 20,
+     "fpr_tau_0.25": 1.0,
+     "fpr_tau_fpr10": 0.0
+    },
+    "plastic_bag": {
+     "n": 53,
+     "fpr_tau_0.25": 0.7547169811320755,
+     "fpr_tau_fpr10": 0.0
+    },
+    "plastic_container": {
+     "n": 41,
+     "fpr_tau_0.25": 1.0,
+     "fpr_tau_fpr10": 0.4634146341463415
+    },
+    "other": {
+     "n": 123,
+     "fpr_tau_0.25": 0.8617886178861789,
+     "fpr_tau_fpr10": 0.0
+    }
+   }
+  }
+ }
+}

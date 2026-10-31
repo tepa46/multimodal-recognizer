@@ -1,0 +1,24 @@
+specimen_id,name,class_name,camera_id,height_cm,width_cm,depth_cm,volume_cm3,mass_empty_g,mass_loaded_g
+f0fc353b-0ae3-4eab-b023-47d57e4d6660,large carton piece with a bear print,carton,xiaomi14t,47.0,38.0,0.5,893.0,37.0,
+0a89ba05-b28f-488f-a033-9203261f177a,piece of cardboard,carton,iphone17pro,18.0,17.5,0.4,126.0,16.0,
+e391c299-e7df-45d5-89aa-92bb66d75f04,Essentuki glass bottle,glass_bottle,xiaomi14t,6.5,6.5,21.7,916.825,269.0,673.0
+4c8aa9b4-521b-4129-a9f4-831b60e5e314,Borjomi bottle,glass_bottle,iphone17pro,24.0,6.0,6.0,864.0,279.0,703.0
+712f9438-c0f7-4bf9-9893-aa750e004592,rillettes glass jar,glass_jar,xiaomi14t,8.0,8.0,6.5,416.0,163.0,325.0
+1d017498-c92b-44b2-875b-8158e05fcbc4,small glass jar,glass_jar,iphone17pro,11.5,8.0,8.0,736.0,253.0,436.0
+db7c3bc8-2b48-4e58-bf26-299762e1add5,Dr Pepper can,metal_can,xiaomi14t,6.0,6.0,14.5,522.0,13.0,185.0
+c2c45e9d-1691-40da-812c-3f83ab421b68,Pepsi can 0.33 l,metal_can,pixel7,11.5,6.0,6.0,414.0,15.0,360.0
+7a0649a4-af23-4be4-9379-0130c475ff2e,pudding cup,other,pixel7,9.5,9.5,8.5,767.125,12.0,212.0
+477c6842-894f-4811-ad12-b9498bf63ef1,remote control,other,pixel7,15.0,4.0,2.0,120.0,80.0,
+2176ec4d-4387-4fe0-8aca-7064fa7a82f9,lighter,other,pixel7,8.0,2.0,1.0,16.0,14.0,
+da493385-9696-44b2-9854-f8f6720918d1,badge,other,iphone17pro,10.2,5.9,0.4,24.072,20.0,
+4c6f1730-7496-4efb-8254-0c81923a082b,lighter,other,xiaomi14t,7.7,2.2,1.0,16.94,13.0,
+fa9e9fb9-e995-439b-b09e-fc510700c566,notebook page,paper,iphone17pro,20.0,13.0,0.05,13.0,4.0,
+fa0e93f0-7d53-44ca-b580-2cde181a005c,Matti muesli bag,plastic_bag,pixel7,21.0,17.0,5.5,1963.5,14.0,264.0
+794d27ae-1bef-4ec5-bb5f-d9f2d8276706,orange bag,plastic_bag,xiaomi14t,10.0,20.0,20.0,4000.0,14.0,84.0
+2e9fa4ae-0371-47d7-91d6-a6a426524403,water bottle (Svyataya) 0.33 l,plastic_bottle,iphone17pro,16.0,6.0,6.0,576.0,15.0,358.0
+1ee3c22e-925b-4038-bb14-927794cd1a2e,J7 juice bottle 0.3 l,plastic_bottle,iphone17pro,17.0,5.5,5.5,514.25,22.0,310.0
+e2c0b019-a676-4edf-bc89-efe1ee7bb519,round container,plastic_container,xiaomi14t,19.0,19.0,6.7,2418.7,19.0,
+19b4f882-7fa4-4d12-8842-57a8d58827aa,container with transparent lid,plastic_container,iphone17pro,20.0,13.0,6.0,1560.0,170.0,515.0
+b4054f6c-151a-40b6-940a-0608f3328040,container with blue lid,plastic_container,iphone17pro,17.5,12.5,6.0,1312.5,79.0,401.0
+45ec505c-e83a-4e29-ac17-5eb9f4653612,Zelenaya Liniya milk carton,tetrapack,xiaomi14t,6.0,9.0,19.7,1063.8,41.0,842.0
+8f1244df-a77c-4d27-a8d7-99880e53753f,milk carton,tetrapack,iphone17pro,23.0,7.0,7.0,1127.0,37.0,934.0

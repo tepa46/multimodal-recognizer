@@ -92,11 +92,23 @@ class MultimodalFusion(nn.Module):
         proj_dim: int = 64,
         mlp_hidden: int = 128,
         dropout: float = 0.3,
+        input_repr: str = "raw",
+        use_expected_mass: bool = True,
+        use_gate: bool = True,
+        gate_input: str = "vdm",
     ) -> None:
         super().__init__()
         if variant not in ("rule", "mlp", "gated"):
             raise ValueError(f"Unknown variant: {variant!r}")
+        if input_repr not in ("raw", "log"):
+            raise ValueError(f"Unknown input_repr: {input_repr!r}")
         self.variant = variant
+        self.input_repr = input_repr
+        self.use_expected_mass = bool(use_expected_mass)
+        self.use_gate = bool(use_gate)
+        if gate_input not in ("vdm", "vdmc", "vdmc+r"):
+            raise ValueError(f"Unknown gate_input: {gate_input!r}")
+        self.gate_input = gate_input
         self.num_classes = num_classes
         self.roi_dim = roi_dim
         self.threshold = float(threshold)
@@ -111,7 +123,8 @@ class MultimodalFusion(nn.Module):
         if variant == "rule":
             return  # no learnable parameters
 
-        scalar_dim = 3
+        n_mass = self._mass_dim()
+        scalar_dim = 1 + n_mass
         cls_dim = num_classes
 
         if variant == "mlp":
@@ -137,12 +150,12 @@ class MultimodalFusion(nn.Module):
             nn.ReLU(inplace=True),
         )
         self.mass_proj = nn.Sequential(
-            nn.Linear(2, proj_dim),  # measured_w + expected_w
+            nn.Linear(n_mass, proj_dim),
             nn.ReLU(inplace=True),
         )
-        # 3 → 3 gate over modality summaries (mean of each projection).
+        gate_in = proj_dim * (4 if gate_input != "vdm" else 3) + (1 if gate_input == "vdmc+r" else 0)
         self.modality_gate = nn.Sequential(
-            nn.Linear(proj_dim * 3, 3),
+            nn.Linear(gate_in, 3),
             nn.Sigmoid(),
         )
         # Class branch is added afterwards (used by physics loss too).
@@ -162,6 +175,26 @@ class MultimodalFusion(nn.Module):
     # Forward variants
     # ------------------------------------------------------------------
 
+    def _mass_dim(self) -> int:
+        if self.input_repr == "raw":
+            return 2 if self.use_expected_mass else 1
+        return 3 if self.use_expected_mass else 1
+
+    def _scalar_inputs(
+        self, volume: torch.Tensor, measured: torch.Tensor, expected: torch.Tensor
+    ) -> tuple[torch.Tensor, torch.Tensor]:
+        if self.input_repr == "raw":
+            v = volume.unsqueeze(1)
+            m = (torch.stack([measured, expected], dim=1) if self.use_expected_mass
+                 else measured.unsqueeze(1))
+            return v, m
+        lv = torch.log(volume.clamp(min=1e-3)).unsqueeze(1)
+        lm = torch.log(measured.clamp(min=1e-3))
+        if not self.use_expected_mass:
+            return lv, lm.unsqueeze(1)
+        le = torch.log(expected.clamp(min=1e-3))
+        return lv, torch.stack([lm, le, lm - le], dim=1)
+
     def expected_weight(
         self, volume: torch.Tensor, class_id: torch.Tensor
     ) -> torch.Tensor:
@@ -178,6 +211,7 @@ class MultimodalFusion(nn.Module):
         is_fraud: Optional[torch.Tensor] = None,
         lambda_phys: float = 1.0,
         mu_cls: float = 0.0,
+        expected_weight: Optional[torch.Tensor] = None,
     ) -> dict[str, torch.Tensor]:
         """
         Args:
@@ -197,7 +231,10 @@ class MultimodalFusion(nn.Module):
             optionally 'loss', 'loss_bce', 'loss_phys', 'loss_cls',
             'modality_gate', 'soft_class', 'soft_expected_weight'.
         """
-        expected_w = self.expected_weight(volume, reported_class)
+        if expected_weight is not None:
+            expected_w = expected_weight
+        else:
+            expected_w = self.expected_weight(volume, reported_class)
         out: dict[str, torch.Tensor] = {"expected_weight": expected_w}
 
         if self.variant == "rule":
@@ -220,10 +257,10 @@ class MultimodalFusion(nn.Module):
         cls_onehot = F.one_hot(
             reported_class, num_classes=self.num_classes
         ).float()
-        scalars = torch.stack([volume, measured_weight, expected_w], dim=1)
+        vol_feat, mass_feat = self._scalar_inputs(volume, measured_weight, expected_w)
 
         if self.variant == "mlp":
-            x = torch.cat([roi_features, scalars, cls_onehot], dim=1)
+            x = torch.cat([roi_features, vol_feat, mass_feat, cls_onehot], dim=1)
             logit = self.mlp(x).squeeze(-1)
             out["fraud_logit"] = logit
             if is_fraud is not None:
@@ -235,18 +272,24 @@ class MultimodalFusion(nn.Module):
 
         # variant == 'gated'
         v = self.visual_proj(roi_features)              # (B, P)
-        d = self.depth_proj(volume.unsqueeze(1))        # (B, P)
-        m = self.mass_proj(scalars[:, 1:3])             # (B, P) — measured + expected
+        d = self.depth_proj(vol_feat)
+        m = self.mass_proj(mass_feat)
         c = self.class_proj(cls_onehot)                 # (B, P)
 
-        # Gate over (visual, depth, mass).
-        gate_input = torch.cat([v, d, m], dim=1)
-        gate = self.modality_gate(gate_input)            # (B, 3) in [0,1]
-        out["modality_gate"] = gate
-
-        v_g = v * gate[:, 0:1]
-        d_g = d * gate[:, 1:2]
-        m_g = m * gate[:, 2:3]
+        if self.use_gate:
+            parts = [v, d, m]
+            if self.gate_input != "vdm":
+                parts.append(c)
+            if self.gate_input == "vdmc+r":
+                resid = torch.log(measured_weight.clamp(min=1e-3)) - torch.log(expected_w.clamp(min=1e-3))
+                parts.append(resid.unsqueeze(1))
+            gate = self.modality_gate(torch.cat(parts, dim=1))
+            out["modality_gate"] = gate
+            v_g = v * gate[:, 0:1]
+            d_g = d * gate[:, 1:2]
+            m_g = m * gate[:, 2:3]
+        else:
+            v_g, d_g, m_g = v, d, m
         fused = torch.cat([v_g, d_g, m_g, c], dim=1)
         logit = self.fraud_head(fused).squeeze(-1)
         out["fraud_logit"] = logit

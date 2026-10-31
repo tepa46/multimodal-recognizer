@@ -1,0 +1,23 @@
+specimen_id,name,class_name,camera_id,height_cm,width_cm,depth_cm,volume_cm3,mass_empty_g,mass_loaded_g
+f0fc353b-0ae3-4eab-b023-47d57e4d6660,large carton piece with a bear print,carton,xiaomi14t,47.0,38.0,0.5,893.0,37.0,
+b8cc8cab-1499-4577-9717-8307ca4aeab6,Greenfield carton piece,carton,xiaomi14t,35.0,17.5,0.5,306.25,14.0,
+4c8aa9b4-521b-4129-a9f4-831b60e5e314,Borjomi bottle,glass_bottle,iphone17pro,24.0,6.0,6.0,864.0,279.0,703.0
+480217fd-eb20-448f-96f7-b5bca95045a9,unlabelled glass jar,glass_jar,xiaomi14t,6.0,6.0,10.2,367.2,146.0,323.0
+850b7b5c-f5b8-4dd4-911c-d2d393e097df,green pea tin,metal_can,iphone17pro,7.0,6.5,6.5,295.75,35.0,257.0
+6a232e9f-2115-419c-88ab-954367c4bd90,black Monster Energy can,metal_can,xiaomi14t,6.5,6.5,16.7,705.575,17.0,240.0
+fc3a6c83-cdb9-43a1-843a-60f2368bf17a,glasses case,other,pixel7,16.0,7.5,3.5,420.0,45.0,
+2b8abfff-8c72-4a89-9421-86bbe3c3ce80,long gas lighter,other,pixel7,27.0,4.0,2.0,216.0,64.0,
+124f1cca-72d5-476d-a1de-65b450ca0d93,pocket knife,other,xiaomi14t,4.0,15.0,1.5,90.0,27.0,
+674e8db5-d407-4da5-b2f4-1351e876ea5a,power adapter,other,xiaomi14t,9.2,5.0,2.7,124.2,94.0,
+b162f1a9-d788-46e1-a424-5b2ae024c58f,envelope,paper,pixel7,22.0,11.0,0.1,24.2,4.0,
+8de67d06-f03d-4cba-9279-aa6e9527ca3e,crumpled white paper,paper,xiaomi14t,4.0,4.5,5.0,90.0,5.0,75.0
+5298adda-716b-4bbd-9f6b-760f81df382b,grocery bag,plastic_bag,pixel7,15.0,8.0,5.0,600.0,1.0,
+794d27ae-1bef-4ec5-bb5f-d9f2d8276706,orange bag,plastic_bag,xiaomi14t,10.0,20.0,20.0,4000.0,14.0,84.0
+dc3b2761-5d27-4901-9784-672953e490f6,blue bag,plastic_bag,xiaomi14t,10.0,15.0,15.0,2250.0,10.0,80.0
+8375eca4-b934-4e00-b0ca-a53764eed21a,Domik v Derevne milk bottle 1 l,plastic_bottle,pixel7,24.0,9.0,9.0,1944.0,33.0,1011.0
+200b1ffc-c0a0-4e4f-8016-dc6fa80da1af,Vesely Vodovoz water bottle,plastic_bottle,xiaomi14t,6.0,6.0,21.5,774.0,22.0,424.0
+d0c551a8-dd57-44cd-a282-1fa52eeb7c19,salad bowl,plastic_container,pixel7,14.0,13.5,4.0,756.0,7.0,337.0
+b4054f6c-151a-40b6-940a-0608f3328040,container with blue lid,plastic_container,iphone17pro,17.5,12.5,6.0,1312.5,79.0,401.0
+44fc4cfa-d043-4440-8167-ea836ed5e7ad,container with sauce cup,plastic_container,xiaomi14t,13.2,18.6,4.5,1104.84,16.0,
+5d79632b-419f-4a8f-a63d-6f4bfade626f,FrutoNyanya juice carton,tetrapack,iphone17pro,10.4,3.9,5.4,219.024,12.0,187.0
+31177aa2-29de-4e70-b53e-91661d5f2362,Chudo milk carton (red),tetrapack,xiaomi14t,6.0,9.0,19.5,1053.0,35.0,942.0

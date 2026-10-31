@@ -1,0 +1,67 @@
+specimen_id,name,class_name,camera_id,height_cm,width_cm,depth_cm,volume_cm3,mass_empty_g,mass_loaded_g
+0acb9112-be8e-4671-9ef2-9f4e93d98538,Barilla carton piece,carton,xiaomi14t,27.0,24.5,0.5,330.75,20.0,
+3b1b11c6-3e1e-44ff-8634-92ebdb55fc07,Dodo Pizza carton piece,carton,xiaomi14t,31.0,18.0,0.5,279.0,19.0,
+b0eddea3-2c6a-49f1-9a9d-b445ec601161,Il Primo bottle,glass_bottle,iphone17pro,24.5,5.0,5.0,612.5,172.0,386.0
+480217fd-eb20-448f-96f7-b5bca95045a9,unlabelled glass jar,glass_jar,xiaomi14t,6.0,6.0,10.2,367.2,146.0,323.0
+0392ee73-366e-4b2e-a159-9a03908e2219,white Adrenaline Rush can,metal_can,xiaomi14t,6.5,6.5,16.7,705.575,14.0,166.0
+850b7b5c-f5b8-4dd4-911c-d2d393e097df,green pea tin,metal_can,iphone17pro,7.0,6.5,6.5,295.75,35.0,257.0
+fc3a6c83-cdb9-43a1-843a-60f2368bf17a,glasses case,other,pixel7,16.0,7.5,3.5,420.0,45.0,
+e886ee4a-cc02-4094-a1bf-e80fde44f4ce,hand grip trainer,other,xiaomi14t,8.0,8.0,2.0,128.0,75.0,
+30add5ea-00c2-41a0-9f64-f86dae9db352,plastic spoon,other,pixel7,18.0,6.5,2.0,234.0,16.0,
+110962e9-b65b-4bb9-beda-905ce2bd1e54,keyboard cleaner,other,iphone17pro,12.0,4.0,2.5,120.0,75.0,
+4aa04411-f649-45f7-b0c3-54ba6b53a6ad,black scissors,other,iphone17pro,16.0,3.0,0.5,24.0,28.0,
+b162f1a9-d788-46e1-a424-5b2ae024c58f,envelope,paper,pixel7,22.0,11.0,0.1,24.2,4.0,
+fd7b83b0-6bbe-47fb-b833-7a6912d9e6bb,green and purple bag,plastic_bag,xiaomi14t,10.0,20.0,20.0,4000.0,13.0,83.0
+dc3b2761-5d27-4901-9784-672953e490f6,blue bag,plastic_bag,xiaomi14t,10.0,15.0,15.0,2250.0,10.0,80.0
+200b1ffc-c0a0-4e4f-8016-dc6fa80da1af,Vesely Vodovoz water bottle,plastic_bottle,xiaomi14t,6.0,6.0,21.5,774.0,22.0,424.0
+20ff744b-11a9-4652-a736-594951c90e62,Svyatoy Istochnik water bottle (blue),plastic_bottle,xiaomi14t,6.5,6.5,22.0,929.5,21.0,347.0
+9429bb3b-e3ac-4681-aa71-289eefcdc9b9,wide kvass bottle 2 l,plastic_bottle,iphone17pro,26.0,13.0,13.0,4394.0,58.0,2053.0
+1effb181-109c-4191-bb9c-a0a8cba27922,small rectangular container,plastic_container,xiaomi14t,10.0,16.0,5.0,800.0,11.0,
+44fc4cfa-d043-4440-8167-ea836ed5e7ad,container with sauce cup,plastic_container,xiaomi14t,13.2,18.6,4.5,1104.84,16.0,
+253a4a83-f61b-48ef-ab3a-e14177e2aa14,Perekrestok tray with sauce,plastic_container,pixel7,19.0,13.5,3.5,897.75,10.0,240.0
+88e8819d-8d66-4766-93f1-cea36d7ff3fd,Fitelit carton 0.5 l,tetrapack,pixel7,12.0,7.5,7.0,630.0,25.0,540.0
+3902c9a2-6019-4bb3-8f3c-867ccaeebc9e,J7 juice carton 1 l,tetrapack,iphone17pro,22.5,5.5,5.5,680.625,62.0,678.0
+6e2e12f8-8704-446e-b3d7-abeb3a88a901,power bank box,carton,iphone17pro,13.0,8.0,3.0,312.0,38.0,157.0
+7e4bf1d3-50e7-4f41-b283-ef74216bb29a,curd snack box,carton,iphone17pro,11.0,3.5,3.5,134.75,6.0,30.0
+3b3b401d-081d-45f5-bd24-e99b5e3e5fdc,cola glass bottle 0.33 l,glass_bottle,pixel7,22.5,6.0,6.0,810.0,240.0,580.0
+0ce9c9e8-bd86-434c-98b3-966c663d646c,Natakhtari glass bottle,glass_bottle,xiaomi14t,7.0,7.0,26.0,1274.0,309.0,700.0
+c8b062df-0038-4acf-8498-cad57b3bcc5c,Nutella jar,glass_jar,iphone17pro,10.0,8.5,6.0,510.0,243.0,457.0
+6a232e9f-2115-419c-88ab-954367c4bd90,black Monster Energy can,metal_can,xiaomi14t,6.5,6.5,16.7,705.575,17.0,240.0
+ea39b465-eb9c-443c-84aa-00d1887b18ca,red Monster Energy can,metal_can,xiaomi14t,6.5,6.5,16.7,705.575,17.0,403.0
+124f1cca-72d5-476d-a1de-65b450ca0d93,pocket knife,other,xiaomi14t,4.0,15.0,1.5,90.0,27.0,
+488ea150-8597-46e2-b16f-588b124913ff,toy boat,other,iphone17pro,14.5,4.5,5.0,326.25,330.0,
+c4908129-20c3-4c7e-8053-4d682ff0cacd,rubber duck,other,xiaomi14t,8.0,5.0,7.2,288.0,47.0,
+674e8db5-d407-4da5-b2f4-1351e876ea5a,power adapter,other,xiaomi14t,9.2,5.0,2.7,124.2,94.0,
+a43298f5-0e81-403e-a8f0-00a60566c534,crumpled sheet of paper,paper,pixel7,7.0,6.0,4.5,189.0,2.0,
+ffbbce28-ebb6-488a-9782-3533fa0cee33,envelope,paper,iphone17pro,16.0,11.5,0.1,18.4,3.0,54.0
+f0333fc6-45be-4393-a525-d7101ab3d56b,Lay's chips bag,plastic_bag,iphone17pro,26.0,18.0,3.0,1404.0,6.0,106.0
+5298adda-716b-4bbd-9f6b-760f81df382b,grocery bag,plastic_bag,pixel7,15.0,8.0,5.0,600.0,1.0,
+8f03b490-5446-49ab-b079-f9092eba6228,grocery bag,plastic_bag,iphone17pro,19.0,12.0,6.0,1368.0,9.0,88.0
+8375eca4-b934-4e00-b0ca-a53764eed21a,Domik v Derevne milk bottle 1 l,plastic_bottle,pixel7,24.0,9.0,9.0,1944.0,33.0,1011.0
+6da54af9-582f-412a-9660-da5cfc11f332,kvass bottle 1.5 l,plastic_bottle,iphone17pro,34.0,10.0,10.0,3400.0,42.0,1683.0
+1e9e7847-3c35-48ec-a4c8-e85753da5755,Prostokvashino milk bottle 1 l,plastic_bottle,pixel7,24.0,8.5,8.5,1734.0,31.0,989.0
+e847b6e1-dc8b-43ea-909f-90500f5f9f2a,Cherkizovo cutlet tray,plastic_container,pixel7,19.0,14.5,5.5,1515.25,20.0,420.0
+889fd2d9-c2d6-4105-88c5-1643a9b42b10,large rectangular container,plastic_container,xiaomi14t,13.6,18.7,4.6,1169.872,17.0,
+05f11a96-af21-45c5-bd9b-9c0cf9a4b8b5,juice carton 2 l,tetrapack,pixel7,27.5,12.0,7.5,2475.0,70.0,1980.0
+31177aa2-29de-4e70-b53e-91661d5f2362,Chudo milk carton (red),tetrapack,xiaomi14t,6.0,9.0,19.5,1053.0,35.0,942.0
+b8cc8cab-1499-4577-9717-8307ca4aeab6,Greenfield carton piece,carton,xiaomi14t,35.0,17.5,0.5,306.25,14.0,
+955426f7-3122-4570-ad31-1a64dee86b21,Greenfield tea box,carton,pixel7,15.5,8.0,7.0,868.0,18.0,88.0
+e6636caa-3b32-445b-9314-7254ca2c5ff1,Dobry Cola glass bottle,glass_bottle,xiaomi14t,5.7,5.7,19.0,617.31,165.0,365.0
+9b9e6c2d-21df-48d8-8a13-c0e3caf8b5cd,Pikanta beans with vegetables jar 0.5 l,glass_jar,pixel7,15.0,7.5,7.5,843.75,250.0,710.0
+02f9a5ff-f96f-4eae-b73e-d2e06643a56b,cola can,metal_can,iphone17pro,13.4,5.0,5.0,335.0,13.0,270.0
+04c76d9c-f569-4382-8616-c8609f80c1b4,toothpaste tube,other,iphone17pro,16.6,4.7,1.1,85.822,23.0,
+c169258b-27dc-404f-a508-3c33f99f784a,measuring cup,other,pixel7,7.5,8.0,3.0,180.0,15.0,115.0
+2b8abfff-8c72-4a89-9421-86bbe3c3ce80,long gas lighter,other,pixel7,27.0,4.0,2.0,216.0,64.0,
+1e1c20cb-59a4-44b5-8f11-c91684b1f694,plastic cup,other,pixel7,9.0,9.0,13.5,1093.5,20.0,520.0
+8de67d06-f03d-4cba-9279-aa6e9527ca3e,crumpled white paper,paper,xiaomi14t,4.0,4.5,5.0,90.0,5.0,75.0
+256afd71-ad4b-4355-811a-e88f200c3f06,crumpled squared paper,paper,xiaomi14t,7.0,11.0,12.0,924.0,7.0,77.0
+497662e8-e8c7-4619-a832-1f9365331da6,Bionova muesli bag,plastic_bag,pixel7,21.0,18.5,6.0,2331.0,15.0,295.0
+2dc9a1ab-9d3b-48e9-a51a-fb9d98f3ca4c,Loko snack bag,plastic_bag,iphone17pro,28.0,20.0,5.0,2800.0,14.0,115.0
+51d19aa8-edb2-4744-b9f6-35d49e3490e2,Pervym Delom water bottle 0.5 l,plastic_bottle,pixel7,21.0,6.0,6.0,756.0,14.0,514.0
+19335b36-2c5c-4b6e-9436-da694842d17f,cola bottle 0.33 l,plastic_bottle,iphone17pro,13.0,6.0,6.0,468.0,23.0,405.0
+07fcc386-904f-4688-a27d-a466cd613c9c,Coca-Cola bottle,plastic_bottle,xiaomi14t,9.0,9.0,27.0,2187.0,38.0,929.0
+a6d8c882-48ad-4d35-8271-4899251020f4,Troekurovo meatball tray,plastic_container,pixel7,21.0,14.5,4.5,1370.25,16.0,366.0
+ca7b6de2-cf2c-40dc-8de8-a4ead7e7b735,black-bottom container,plastic_container,pixel7,15.0,15.0,6.0,1350.0,10.0,450.0
+d0c551a8-dd57-44cd-a282-1fa52eeb7c19,salad bowl,plastic_container,pixel7,14.0,13.5,4.0,756.0,7.0,337.0
+959f3b48-ed3c-4bb6-b15c-0ee971c7f874,Selo Zelyonoe carton 1 l,tetrapack,pixel7,21.0,7.5,7.0,1102.5,35.0,1030.0
+5d79632b-419f-4a8f-a63d-6f4bfade626f,FrutoNyanya juice carton,tetrapack,iphone17pro,10.4,3.9,5.4,219.024,12.0,187.0

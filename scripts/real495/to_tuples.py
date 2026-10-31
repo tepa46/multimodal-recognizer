@@ -16,7 +16,7 @@ HEADER = [
     "reported_class_id", "reported_class_name",
     "bbox_x", "bbox_y", "bbox_w", "bbox_h",
     "volume_cm3", "expected_weight_g", "measured_weight_g",
-    "is_fraud", "fraud_type",
+    "is_fraud", "fraud_type", "specimen_id", "expected_weight_loso_g",
 ]
 
 
@@ -25,7 +25,10 @@ def main() -> None:
     ap.add_argument("--coco", default="datasets/real495/annotations/instances_all.json")
     ap.add_argument("--measurements", default="datasets/real495/measurements.csv")
     ap.add_argument("--image-root", default="datasets/real495/images")
-    ap.add_argument("--density-config", default="configs/material_density.yaml")
+    ap.add_argument("--density-config", default="configs/calibration_packphys.yaml",
+                    help="Density table for the expected mass. The revision "
+                         "uses the table calibrated on specimens disjoint from "
+                         "real495 (configs/calibration_packphys.yaml).")
     ap.add_argument("--out", default="datasets/multimodal/real495/tuples.csv")
     args = ap.parse_args()
 
@@ -87,8 +90,10 @@ def main() -> None:
             cid, cname,
             cid, cname,            # reported == true: no wrong_class by construction
             f"{x:.2f}", f"{y:.2f}", f"{bw:.2f}", f"{bh:.2f}",
-            f"{volume:.3f}", f"{expected_w:.3f}", f"{measured_w:.3f}",
+            f"{volume:.6g}", f"{expected_w:.6g}", f"{measured_w:.6g}",
             is_fraud, fraud_type,
+            m.get("specimen_id", ""),
+            f"{expected_w:.6g}",
         ])
 
     with open(out_path, "w", newline="") as f:

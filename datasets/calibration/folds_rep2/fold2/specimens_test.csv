@@ -1,0 +1,23 @@
+specimen_id,name,class_name,camera_id,height_cm,width_cm,depth_cm,volume_cm3,mass_empty_g,mass_loaded_g
+f0fc353b-0ae3-4eab-b023-47d57e4d6660,large carton piece with a bear print,carton,xiaomi14t,47.0,38.0,0.5,893.0,37.0,
+b8cc8cab-1499-4577-9717-8307ca4aeab6,Greenfield carton piece,carton,xiaomi14t,35.0,17.5,0.5,306.25,14.0,
+4c8aa9b4-521b-4129-a9f4-831b60e5e314,Borjomi bottle,glass_bottle,iphone17pro,24.0,6.0,6.0,864.0,279.0,703.0
+c8b062df-0038-4acf-8498-cad57b3bcc5c,Nutella jar,glass_jar,iphone17pro,10.0,8.5,6.0,510.0,243.0,457.0
+1d017498-c92b-44b2-875b-8158e05fcbc4,small glass jar,glass_jar,iphone17pro,11.5,8.0,8.0,736.0,253.0,436.0
+02f9a5ff-f96f-4eae-b73e-d2e06643a56b,cola can,metal_can,iphone17pro,13.4,5.0,5.0,335.0,13.0,270.0
+674e8db5-d407-4da5-b2f4-1351e876ea5a,power adapter,other,xiaomi14t,9.2,5.0,2.7,124.2,94.0,
+2176ec4d-4387-4fe0-8aca-7064fa7a82f9,lighter,other,pixel7,8.0,2.0,1.0,16.0,14.0,
+1e1c20cb-59a4-44b5-8f11-c91684b1f694,plastic cup,other,pixel7,9.0,9.0,13.5,1093.5,20.0,520.0
+da493385-9696-44b2-9854-f8f6720918d1,badge,other,iphone17pro,10.2,5.9,0.4,24.072,20.0,
+4c6f1730-7496-4efb-8254-0c81923a082b,lighter,other,xiaomi14t,7.7,2.2,1.0,16.94,13.0,
+fa9e9fb9-e995-439b-b09e-fc510700c566,notebook page,paper,iphone17pro,20.0,13.0,0.05,13.0,4.0,
+fd7b83b0-6bbe-47fb-b833-7a6912d9e6bb,green and purple bag,plastic_bag,xiaomi14t,10.0,20.0,20.0,4000.0,13.0,83.0
+fa0e93f0-7d53-44ca-b580-2cde181a005c,Matti muesli bag,plastic_bag,pixel7,21.0,17.0,5.5,1963.5,14.0,264.0
+1e9e7847-3c35-48ec-a4c8-e85753da5755,Prostokvashino milk bottle 1 l,plastic_bottle,pixel7,24.0,8.5,8.5,1734.0,31.0,989.0
+8375eca4-b934-4e00-b0ca-a53764eed21a,Domik v Derevne milk bottle 1 l,plastic_bottle,pixel7,24.0,9.0,9.0,1944.0,33.0,1011.0
+6da54af9-582f-412a-9660-da5cfc11f332,kvass bottle 1.5 l,plastic_bottle,iphone17pro,34.0,10.0,10.0,3400.0,42.0,1683.0
+1effb181-109c-4191-bb9c-a0a8cba27922,small rectangular container,plastic_container,xiaomi14t,10.0,16.0,5.0,800.0,11.0,
+a6d8c882-48ad-4d35-8271-4899251020f4,Troekurovo meatball tray,plastic_container,pixel7,21.0,14.5,4.5,1370.25,16.0,366.0
+889fd2d9-c2d6-4105-88c5-1643a9b42b10,large rectangular container,plastic_container,xiaomi14t,13.6,18.7,4.6,1169.872,17.0,
+959f3b48-ed3c-4bb6-b15c-0ee971c7f874,Selo Zelyonoe carton 1 l,tetrapack,pixel7,21.0,7.5,7.0,1102.5,35.0,1030.0
+88e8819d-8d66-4766-93f1-cea36d7ff3fd,Fitelit carton 0.5 l,tetrapack,pixel7,12.0,7.5,7.0,630.0,25.0,540.0

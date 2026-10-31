@@ -19,11 +19,17 @@ from src.models import build_fusion_model  # noqa: E402
 # Re-use TuplesDataset / collate / ROI cache loader from train_fusion.
 from scripts.fusion.train_fusion import (  # noqa: E402
     TuplesDataset, collate_fn, load_or_build_roi_cache, evaluate,
+    expected_or_none, model_kwargs,
 )
 
 
 # Synthetic fraud types from generate_multimodal_tuples.py.
 FRAUD_TYPES = ("normal", "heavy_fill", "foreign_object", "wrong_class")
+
+def rule_tolerance_grid(wide: bool = True) -> np.ndarray:
+    if wide:
+        return np.exp(np.linspace(np.log(0.05), np.log(20.0), 121))
+    return np.linspace(0.05, 0.5, 19)
 
 
 # ---------------------------------------------------------------------------
@@ -52,8 +58,20 @@ def collect_predictions(
     loader: DataLoader,
     device: str,
     mask_modality: str = "none",
+    expected_scale: torch.Tensor | None = None,
 ) -> tuple[torch.Tensor, torch.Tensor, list[str]]:
     from scripts.fusion.train_fusion import _apply_modality_mask
+
+    def _expected(batch: dict[str, Any], dev: str) -> torch.Tensor | None:
+        e = expected_or_none(batch, dev)
+        if expected_scale is None:
+            return e
+        cls = batch["reported_class"].long()
+        if e is None:
+            e = batch["volume"] * model.density_table.cpu()[cls] if model is not None \
+                else batch["volume"] * densities[cls]
+            e = e.to(dev)
+        return e * expected_scale.to(dev)[cls.to(dev)]
     all_score: list[torch.Tensor] = []
     all_gt: list[torch.Tensor] = []
     all_type: list[str] = []
@@ -63,7 +81,9 @@ def collect_predictions(
             cls = batch["reported_class"].long()
             vol = batch["volume"]
             meas = batch["measured_weight"]
-            expected = vol * densities[cls]
+            expected = _expected(batch, "cpu")
+            if expected is None:
+                expected = vol * densities[cls]
             score = (meas - expected).abs() / torch.clamp(expected, min=1e-3)
         else:
             roi = batch["roi_features"].to(device)
@@ -77,6 +97,7 @@ def collect_predictions(
                 volume,
                 measured_weight,
                 batch["reported_class"].to(device).long(),
+                expected_weight=_expected(batch, device),
             )
             # Use sigmoid(logit) as score so threshold lives in [0,1].
             score = torch.sigmoid(out["fraud_logit"]).cpu()
@@ -130,8 +151,9 @@ def sweep_threshold(
         cls = batch["reported_class"].long()
         vol = batch["volume"]
         meas = batch["measured_weight"]
-        density = densities[cls]
-        expected = vol * density
+        expected = expected_or_none(batch, "cpu")
+        if expected is None:
+            expected = vol * densities[cls]
         rel_err = (meas - expected).abs() / torch.clamp(expected, min=1e-3)
         all_rel_err.append(rel_err)
         all_y.append(batch["is_fraud"])
@@ -188,6 +210,23 @@ def main() -> None:
                         help="bbox mAP from MMDet test (shared across variants)")
     parser.add_argument("--mask-map", type=float, default=None,
                         help="mask mAP from MMDet test (shared across variants)")
+    parser.add_argument("--density-yaml", type=Path,
+                        default=Path("configs/material_density.yaml"),
+                        help="Density table loaded into the models and used by "
+                             "the rule when the tuples carry no explicit expected "
+                             "mass. For calibrated tuples pass the SAME dev "
+                             "calibration yaml the tuples were generated from.")
+    parser.add_argument("--dropout", type=float, default=0.3,
+                        help="Dropout in the fraud head (submitted: 0.3).")
+    parser.add_argument("--input-repr", choices=["raw", "log"], default="raw",
+                        help="Scalar input representation of the learned heads "
+                             "(see MultimodalFusion).")
+    parser.add_argument("--no-expected-mass", action="store_true",
+                        help="Ablation: drop m_hat from the learned heads' inputs.")
+    parser.add_argument("--gate-input", choices=["vdm", "vdmc", "vdmc+r"], default="vdm",
+                        help="Inputs of the gate network (see MultimodalFusion).")
+    parser.add_argument("--no-gate", action="store_true",
+                        help="Ablation: same projections, no sigmoid gates.")
     parser.add_argument("--device", default="cuda")
     parser.add_argument("--batch-size", type=int, default=512)
     parser.add_argument("--num-workers", type=int, default=2)
@@ -201,6 +240,9 @@ def main() -> None:
                              "used during train_fusion.py for that ckpt.")
     parser.add_argument("--output-json", type=Path,
                         default=Path("experiments/fusion/eval_fraud.json"))
+    parser.add_argument("--narrow-rule-grid", action="store_true",
+                        help="Use the submitted tolerance grid [0.05, 0.5] "
+                             "for the density check instead of 0.05-20.")
     parser.add_argument("--learned-threshold", type=float, default=0.5,
                         help="Operating threshold for learned variants "
                              "(paper protocol: the val-swept τ of the "
@@ -238,7 +280,7 @@ def main() -> None:
         load_density_config, density_lookup_tensor,
     )
     from scripts.fusion.train_fusion import CLASS_NAMES
-    cfg = load_density_config("configs/material_density.yaml")
+    cfg = load_density_config(args.density_yaml)
     densities = density_lookup_tensor(cfg["densities"], list(CLASS_NAMES))
 
     for variant in args.variants:
@@ -250,7 +292,7 @@ def main() -> None:
             val_score, val_gt, val_types = collect_predictions(
                 None, densities, val_loader, device,
             )
-            grid = np.linspace(0.05, 0.5, 19)
+            grid = rule_tolerance_grid(not args.narrow_rule_grid)
             best_tau = float(grid[0]); best_f1 = -1.0
             for tau in grid:
                 m = _binary_metrics((val_score > tau).long(), val_gt)
@@ -274,7 +316,7 @@ def main() -> None:
             print(f"  SKIP — no checkpoint at {ckpt}")
             results[variant] = {"error": f"no ckpt at {ckpt}"}
             continue
-        model = build_fusion_model(variant).to(device)
+        model = build_fusion_model(variant, density_yaml=args.density_yaml, **model_kwargs(args)).to(device)
         state = torch.load(ckpt, map_location=device, weights_only=True)
         model.load_state_dict(state["state_dict"])
         model.eval()

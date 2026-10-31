@@ -69,6 +69,9 @@ class TuplesDataset(Dataset):
             "is_fraud": torch.tensor(float(int(r["is_fraud"]))),
             "image_path": r["image_path"],
             "fraud_type": r["fraud_type"],
+            "expected_weight": torch.tensor(
+                float(r["expected_weight_loso_g"])
+                if "expected_weight_loso_g" in r else float("nan")),
             "bbox": torch.tensor([
                 float(r["bbox_x"]), float(r["bbox_y"]),
                 float(r["bbox_w"]), float(r["bbox_h"]),
@@ -79,7 +82,8 @@ class TuplesDataset(Dataset):
 def collate_fn(batch: list[dict[str, Any]]) -> dict[str, Any]:
     out: dict[str, Any] = {}
     keys = ["annotation_id", "roi_features", "volume", "measured_weight",
-            "reported_class", "true_class", "is_fraud", "bbox"]
+            "reported_class", "true_class", "is_fraud", "bbox",
+            "expected_weight"]
     for k in keys:
         out[k] = torch.stack([b[k] for b in batch])
     out["image_path"] = [b["image_path"] for b in batch]
@@ -191,6 +195,22 @@ def load_or_build_roi_cache(
 # Train / eval
 # ---------------------------------------------------------------------------
 
+def model_kwargs(args: Any) -> dict[str, Any]:
+    return {
+        "dropout": getattr(args, "dropout", 0.3),
+        "input_repr": getattr(args, "input_repr", "raw"),
+        "use_expected_mass": not getattr(args, "no_expected_mass", False),
+        "use_gate": not getattr(args, "no_gate", False),
+    }
+
+
+def expected_or_none(batch: dict[str, Any], device: str) -> torch.Tensor | None:
+    e = batch["expected_weight"]
+    if torch.isnan(e).all():
+        return None
+    return e.to(device)
+
+
 def _apply_modality_mask(
     roi: torch.Tensor,
     volume: torch.Tensor,
@@ -231,6 +251,7 @@ def evaluate(model: nn.Module, loader: DataLoader, device: str,
             batch["is_fraud"].to(device),
             lambda_phys=lambda_phys,
             mu_cls=mu_cls,
+            expected_weight=expected_or_none(batch, device),
         )
         if "loss" in out:
             losses.append(float(out["loss"]))
@@ -262,10 +283,11 @@ def train_loop(
     output_dir: Path,
     mask_modality: str = "none",
     mu_cls: float = 0.0,
+    weight_decay: float = 1e-4,
 ) -> dict[str, Any]:
     optim_ = optim.AdamW(
         [p for p in model.parameters() if p.requires_grad],
-        lr=lr, weight_decay=1e-4,
+        lr=lr, weight_decay=weight_decay,
     )
     best_f1 = -1.0
     best_state: dict[str, Any] | None = None
@@ -289,6 +311,7 @@ def train_loop(
                 batch["is_fraud"].to(device),
                 lambda_phys=lambda_phys,
                 mu_cls=mu_cls,
+                expected_weight=expected_or_none(batch, device),
             )
             loss = out["loss"]
             optim_.zero_grad()
@@ -346,6 +369,20 @@ def main() -> None:
                         help="Weight of the CE anchor tying the auxiliary "
                              "soft-class head to the reported class on "
                              "legitimate samples (gated only).")
+    parser.add_argument("--density-yaml", type=Path,
+                        default=Path("configs/material_density.yaml"),
+                        help="Density table loaded into the model (see run_fusion_stats.py).")
+    parser.add_argument("--dropout", type=float, default=0.3,
+                        help="Dropout in the fraud head (submitted: 0.3).")
+    parser.add_argument("--input-repr", choices=["raw", "log"], default="raw",
+                        help="Scalar input representation of the learned heads "
+                             "(see MultimodalFusion).")
+    parser.add_argument("--no-expected-mass", action="store_true",
+                        help="Ablation: drop m_hat from the learned heads' inputs.")
+    parser.add_argument("--gate-input", choices=["vdm", "vdmc", "vdmc+r"], default="vdm",
+                        help="Inputs of the gate network (see MultimodalFusion).")
+    parser.add_argument("--no-gate", action="store_true",
+                        help="Ablation: same projections, no sigmoid gates.")
     parser.add_argument("--device", default="cuda")
     parser.add_argument("--num-workers", type=int, default=2)
     parser.add_argument("--no-roi", action="store_true",
@@ -407,7 +444,7 @@ def main() -> None:
     print(f"Train: {len(train_ds)} tuples / {len(roi_cache_train)} cached ROIs")
     print(f"Val:   {len(val_ds)} tuples / {len(roi_cache_val)} cached ROIs")
 
-    model = build_fusion_model(args.variant).to(device)
+    model = build_fusion_model(args.variant, density_yaml=args.density_yaml, **model_kwargs(args)).to(device)
     n_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
     print(f"Variant={args.variant}  trainable params={n_params}")
 

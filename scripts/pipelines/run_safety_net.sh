@@ -8,15 +8,17 @@ mkdir -p "experiments/work_dirs/_v33_noreal_logs"
 MASTER=experiments/work_dirs/_v33_noreal_master.log
 TAU=0.25
 
-echo "=== waiting for V33_NOREAL_TRAINING_FINISHED ==="
-for i in $(seq 1 2400); do
-    grep -q "V33_NOREAL_TRAINING_FINISHED" "$MASTER" 2>/dev/null && break
-    sleep 60
-done
-if ! grep -q "V33_NOREAL_TRAINING_FINISHED" "$MASTER" 2>/dev/null; then
-    echo "TIMEOUT waiting for training"; exit 1
+if [ -f "$MASTER" ]; then
+    echo "=== waiting for V33_NOREAL_TRAINING_FINISHED ==="
+    for i in $(seq 1 2400); do
+        grep -q "V33_NOREAL_TRAINING_FINISHED" "$MASTER" 2>/dev/null && break
+        sleep 60
+    done
+    if ! grep -q "V33_NOREAL_TRAINING_FINISHED" "$MASTER" 2>/dev/null; then
+        echo "TIMEOUT waiting for training"; exit 1
+    fi
+    echo "[$(date +%H:%M:%S)] training finished, proceeding"
 fi
-echo "[$(date +%H:%M:%S)] training finished, proceeding"
 
 # Resolve each config's best-validation epoch from its own training log,
 # rather than assuming the last epoch is the best one.
@@ -44,6 +46,11 @@ run_one() {
     local wd="experiments/work_dirs/${cfg}_v33_noreal"
     local ep
     ep=$(best_epoch "$wd")
+    if [ -z "$ep" ]; then
+        set -- "$wd"/epoch_*.pth
+        [ "$#" -eq 1 ] && [ -f "$1" ] && ep=$(basename "$1" .pth | sed 's/^epoch_//')
+        set -- "$cfg" "$gpu"
+    fi
     if [ -z "$ep" ] || [ ! -f "$wd/epoch_${ep}.pth" ]; then
         echo "  !! cannot resolve best epoch for $cfg (got '$ep'), skipping"; return 1
     fi

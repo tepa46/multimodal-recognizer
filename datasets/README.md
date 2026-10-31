@@ -11,16 +11,23 @@ real495/                          our dataset — complete
 ├── annotations/instances_all.json   COCO: boxes + SAM RLE masks + attributes
 ├── annotations/instances_boxes.json pre-mask export (boxes only)
 ├── measurements.csv                 495 rows: dimensions, mass, empty mass
+├── measurements_specimens.csv       the same rows with specimen ids (25 specimens)
 ├── split_train_heldout.json         frozen 128/87-frame split + leakage metric
 ├── review_state.json                raw annotation state, per-annotator provenance
 ├── sam_masks.json                   SAM masks with scores
 └── proposals.json                   detector proposals + SigLIP-2 suggestions
 
 processed_v3.3/annotations/       Hybrid-v3.3 COCO (train/val/test)
+processed_v3.3/manifest.json      per-source remapping, exclusions and counts
+DATA_CARD.md                      data card: real495, Hybrid-v3.3, calibration, BeachLitter labels
 processed_ood/beach_litter_v2/annotations/
                                   BeachLitter-10 v2: full set + verified-only
 multimodal/v3.3/{train,val,test}/tuples.csv
                                   generated fusion tuples, seeds 42/43/44
+calibration/                      89 calibration specimens and their fold partitions
+multimodal/v3.4_folds{,_rep1,_rep2,_rep3}/fold{0..3}/{train,val,test}/tuples.csv
+                                  specimen-disjoint fold tuples, seeds 42/43/44
+multimodal/real495/tuples.csv     real495 tuples with measured masses
 ```
 
 ## What is not shipped, and how to rebuild it
@@ -33,6 +40,7 @@ upstream:
 python scripts/build_data/download_sources.py
 python scripts/build_data/build_hybrid_coco.py \
     --raw-dir datasets/raw/ --output-dir datasets/processed_v3.3/ \
+    --sources taco zerowaste drinking_waste dwsd real495 \
     --exclude beach_litter --zerowaste-cardboard-frac 0.33
 ```
 

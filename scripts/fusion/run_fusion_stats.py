@@ -20,11 +20,13 @@ from src.models.multimodal_fusion import (  # noqa: E402
     load_density_config, density_lookup_tensor,
 )
 from scripts.fusion.train_fusion import (  # noqa: E402
+    model_kwargs,
     CLASS_NAMES, TuplesDataset, collate_fn, load_or_build_roi_cache,
     train_loop,
 )
 from scripts.fusion.eval_fraud import (  # noqa: E402
     collect_predictions, per_type_breakdown, _binary_metrics,
+    rule_tolerance_grid,
 )
 
 
@@ -32,8 +34,9 @@ from scripts.fusion.eval_fraud import (  # noqa: E402
 # Helpers
 # ---------------------------------------------------------------------------
 
-def set_seed(seed: int) -> None:
+def set_seed(seed: int, threads: int = 1) -> None:
     import random as _py_random
+    torch.set_num_threads(threads)
     torch.manual_seed(seed)
     np.random.seed(seed)
     _py_random.seed(seed)
@@ -173,9 +176,16 @@ def main() -> None:
     parser.add_argument("--seeds", type=int, nargs="+", default=[42, 43, 44])
     parser.add_argument("--mu-cls", type=float, default=0.0)
     parser.add_argument("--skip-mlp", action="store_true")
+    parser.add_argument("--mlp-only", action="store_true",
+                        help="Train only the MLP baseline (no gated runs).")
     parser.add_argument("--epochs", type=int, default=30)
     parser.add_argument("--batch-size", type=int, default=256)
     parser.add_argument("--lr", type=float, default=1e-3)
+    parser.add_argument("--weight-decay", type=float, default=1e-4)
+    parser.add_argument("--mask-modality", choices=["none", "visual", "depth", "mass"],
+                        default="none", help="Zero one input at train and test "
+                        "time (modality ablation). With explicit expected mass "
+                        "in the tuples, zeroing the volume no longer zeroes m_hat.")
     parser.add_argument("--tuples-train", type=Path,
                         default=Path("datasets/multimodal/v3.3/train/tuples.csv"))
     parser.add_argument("--tuples-val", type=Path,
@@ -194,15 +204,37 @@ def main() -> None:
                         default=Path("experiments/fusion/stats_v3_3.json"))
     parser.add_argument("--append", action="store_true",
                         help="Merge runs into an existing stats JSON.")
+    parser.add_argument("--narrow-rule-grid", action="store_true",
+                        help="Submitted tolerance grid [0.05, 0.5] for the rule.")
     parser.add_argument("--anchor-seed", type=int, default=42)
     parser.add_argument("--n-boot", type=int, default=1000)
+    parser.add_argument("--density-yaml", type=Path,
+                        default=Path("configs/material_density.yaml"),
+                        help="Density table loaded into the models and used by "
+                             "the rule when the tuples carry no explicit expected "
+                             "mass. For calibrated tuples pass the SAME dev "
+                             "calibration yaml the tuples were generated from.")
+    parser.add_argument("--dropout", type=float, default=0.3,
+                        help="Dropout in the fraud head (submitted: 0.3).")
+    parser.add_argument("--input-repr", choices=["raw", "log"], default="raw",
+                        help="Scalar input representation of the learned heads "
+                             "(see MultimodalFusion).")
+    parser.add_argument("--no-expected-mass", action="store_true",
+                        help="Ablation: drop m_hat from the learned heads' inputs.")
+    parser.add_argument("--gate-input", choices=["vdm", "vdmc", "vdmc+r"], default="vdm",
+                        help="Inputs of the gate network (see MultimodalFusion).")
+    parser.add_argument("--no-gate", action="store_true",
+                        help="Ablation: same projections, no sigmoid gates.")
     parser.add_argument("--device", default="cuda")
     parser.add_argument("--num-workers", type=int, default=2)
+    parser.add_argument("--threads", type=int, default=1,
+                        help="CPU threads per run; part of the reproducibility "
+                             "contract (see set_seed).")
     args = parser.parse_args()
 
     device = args.device if torch.cuda.is_available() else "cpu"
     grid = np.linspace(0.05, 0.95, 91)        # sigmoid-score grid (learned)
-    rule_grid = np.linspace(0.05, 0.5, 19)    # rel-err grid (rule)
+    rule_grid = rule_tolerance_grid(not args.narrow_rule_grid)
 
     # ---------------- data (loaded once) ----------------
     ckpt_tag = args.detector_ckpt.stem
@@ -228,15 +260,25 @@ def main() -> None:
     print(f"Tuples: train={len(ds['train'])} val={len(ds['val'])} "
           f"test={len(ds['test'])}  (ROI cache tag: {ckpt_tag})")
 
-    cfg = load_density_config("configs/material_density.yaml")
+    cfg = load_density_config(args.density_yaml)
     densities = density_lookup_tensor(cfg["densities"], list(CLASS_NAMES))
 
     stats: dict[str, Any] = {"runs": {}, "aggregates": {}, "meta": {
         "epochs": args.epochs, "lr": args.lr, "batch_size": args.batch_size,
         "detector_ckpt": str(args.detector_ckpt),
         "seeds": args.seeds, "lambdas": args.lambdas, "mu_cls": args.mu_cls,
-        "anchor_seed": args.anchor_seed,
+        "anchor_seed": args.anchor_seed, "density_yaml": str(args.density_yaml),
+        "tuples": {"train": str(args.tuples_train), "val": str(args.tuples_val),
+                   "test": str(args.tuples_test)},
+        "model": model_kwargs(args), "threads": args.threads,
+        "weight_decay": args.weight_decay, "mask_modality": args.mask_modality,
+        "torch": torch.__version__,
     }}
+    has_loso = all("expected_weight_loso_g" in open(p).readline()
+                   for p in (args.tuples_train, args.tuples_val, args.tuples_test))
+    stats["meta"]["expected_mass_from_tuples"] = has_loso
+    print(f"expected mass from tuples (leave-one-specimen-out): {has_loso}; "
+          f"density table: {args.density_yaml}")
     if args.append and args.stats_json.exists():
         with open(args.stats_json) as f:
             stats = json.load(f)
@@ -273,8 +315,8 @@ def main() -> None:
                    if variant == "gated" else f"{variant}_s{seed}")
         run_dir = args.output_dir / run_key
         print(f"\n=== {run_key} ===", flush=True)
-        set_seed(seed)
-        model = build_fusion_model(variant).to(device)
+        set_seed(seed, args.threads)
+        model = build_fusion_model(variant, density_yaml=args.density_yaml, **model_kwargs(args)).to(device)
         train_loader = DataLoader(ds["train"], batch_size=args.batch_size,
                                   shuffle=True, num_workers=args.num_workers,
                                   collate_fn=collate_fn)
@@ -289,14 +331,18 @@ def main() -> None:
             lambda_phys=lam,
             output_dir=run_dir,
             mu_cls=mu,
+            weight_decay=args.weight_decay,
+            mask_modality=args.mask_modality,
         )
         # Reload the best checkpoint for evaluation.
         state = torch.load(run_dir / "best.pth", map_location=device,
                            weights_only=True)
         model.load_state_dict(state["state_dict"])
         model.eval()
-        val_pack = collect_predictions(model, None, eval_loaders["val"], device)
-        test_pack = collect_predictions(model, None, eval_loaders["test"], device)
+        val_pack = collect_predictions(model, None, eval_loaders["val"], device,
+                                       mask_modality=args.mask_modality)
+        test_pack = collect_predictions(model, None, eval_loaders["test"], device,
+                                        mask_modality=args.mask_modality)
         rec = evaluate_scores(val_pack, test_pack, grid)
         rec["train_seconds"] = round(time.time() - t0, 1)
         rec["seed"] = seed
@@ -312,9 +358,10 @@ def main() -> None:
               f"[{rec['train_seconds']}s]", flush=True)
         return run_key
 
-    for lam in args.lambdas:
-        for seed in args.seeds:
-            run_one("gated", lam, args.mu_cls, seed)
+    if not args.mlp_only:
+        for lam in args.lambdas:
+            for seed in args.seeds:
+                run_one("gated", lam, args.mu_cls, seed)
     if not args.skip_mlp:
         for seed in args.seeds:
             run_one("mlp", 0.0, 0.0, seed)
@@ -329,7 +376,7 @@ def main() -> None:
         }
         stats["aggregates"][group_key]["run_keys"] = run_keys
 
-    for lam in args.lambdas:
+    for lam in ([] if args.mlp_only else args.lambdas):
         aggregate(
             f"gated_lam{lam:g}_mu{args.mu_cls:g}",
             [f"gated_lam{lam:g}_mu{args.mu_cls:g}_s{s}" for s in args.seeds],

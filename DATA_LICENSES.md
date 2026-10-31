@@ -36,6 +36,7 @@ Reassembling the benchmark from upstream sources is the intended path:
 ```bash
 python scripts/build_data/download_sources.py
 python scripts/build_data/build_hybrid_coco.py --raw-dir datasets/raw/ \
-    --output-dir datasets/processed_v3.3/ --exclude beach_litter \
-    --zerowaste-cardboard-frac 0.33
+    --output-dir datasets/processed_v3.3/ \
+    --sources taco zerowaste drinking_waste dwsd real495 \
+    --exclude beach_litter --zerowaste-cardboard-frac 0.33
 ```

@@ -1,0 +1,24 @@
+specimen_id,name,class_name,camera_id,height_cm,width_cm,depth_cm,volume_cm3,mass_empty_g,mass_loaded_g
+6e2e12f8-8704-446e-b3d7-abeb3a88a901,power bank box,carton,iphone17pro,13.0,8.0,3.0,312.0,38.0,157.0
+7e4bf1d3-50e7-4f41-b283-ef74216bb29a,curd snack box,carton,iphone17pro,11.0,3.5,3.5,134.75,6.0,30.0
+3b3b401d-081d-45f5-bd24-e99b5e3e5fdc,cola glass bottle 0.33 l,glass_bottle,pixel7,22.5,6.0,6.0,810.0,240.0,580.0
+0ce9c9e8-bd86-434c-98b3-966c663d646c,Natakhtari glass bottle,glass_bottle,xiaomi14t,7.0,7.0,26.0,1274.0,309.0,700.0
+c8b062df-0038-4acf-8498-cad57b3bcc5c,Nutella jar,glass_jar,iphone17pro,10.0,8.5,6.0,510.0,243.0,457.0
+6a232e9f-2115-419c-88ab-954367c4bd90,black Monster Energy can,metal_can,xiaomi14t,6.5,6.5,16.7,705.575,17.0,240.0
+ea39b465-eb9c-443c-84aa-00d1887b18ca,red Monster Energy can,metal_can,xiaomi14t,6.5,6.5,16.7,705.575,17.0,403.0
+124f1cca-72d5-476d-a1de-65b450ca0d93,pocket knife,other,xiaomi14t,4.0,15.0,1.5,90.0,27.0,
+488ea150-8597-46e2-b16f-588b124913ff,toy boat,other,iphone17pro,14.5,4.5,5.0,326.25,330.0,
+c4908129-20c3-4c7e-8053-4d682ff0cacd,rubber duck,other,xiaomi14t,8.0,5.0,7.2,288.0,47.0,
+674e8db5-d407-4da5-b2f4-1351e876ea5a,power adapter,other,xiaomi14t,9.2,5.0,2.7,124.2,94.0,
+a43298f5-0e81-403e-a8f0-00a60566c534,crumpled sheet of paper,paper,pixel7,7.0,6.0,4.5,189.0,2.0,
+ffbbce28-ebb6-488a-9782-3533fa0cee33,envelope,paper,iphone17pro,16.0,11.5,0.1,18.4,3.0,54.0
+f0333fc6-45be-4393-a525-d7101ab3d56b,Lay's chips bag,plastic_bag,iphone17pro,26.0,18.0,3.0,1404.0,6.0,106.0
+5298adda-716b-4bbd-9f6b-760f81df382b,grocery bag,plastic_bag,pixel7,15.0,8.0,5.0,600.0,1.0,
+8f03b490-5446-49ab-b079-f9092eba6228,grocery bag,plastic_bag,iphone17pro,19.0,12.0,6.0,1368.0,9.0,88.0
+8375eca4-b934-4e00-b0ca-a53764eed21a,Domik v Derevne milk bottle 1 l,plastic_bottle,pixel7,24.0,9.0,9.0,1944.0,33.0,1011.0
+6da54af9-582f-412a-9660-da5cfc11f332,kvass bottle 1.5 l,plastic_bottle,iphone17pro,34.0,10.0,10.0,3400.0,42.0,1683.0
+1e9e7847-3c35-48ec-a4c8-e85753da5755,Prostokvashino milk bottle 1 l,plastic_bottle,pixel7,24.0,8.5,8.5,1734.0,31.0,989.0
+e847b6e1-dc8b-43ea-909f-90500f5f9f2a,Cherkizovo cutlet tray,plastic_container,pixel7,19.0,14.5,5.5,1515.25,20.0,420.0
+889fd2d9-c2d6-4105-88c5-1643a9b42b10,large rectangular container,plastic_container,xiaomi14t,13.6,18.7,4.6,1169.872,17.0,
+05f11a96-af21-45c5-bd9b-9c0cf9a4b8b5,juice carton 2 l,tetrapack,pixel7,27.5,12.0,7.5,2475.0,70.0,1980.0
+31177aa2-29de-4e70-b53e-91661d5f2362,Chudo milk carton (red),tetrapack,xiaomi14t,6.0,9.0,19.5,1053.0,35.0,942.0

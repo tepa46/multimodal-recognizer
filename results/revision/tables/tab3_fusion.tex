@@ -1,0 +1,22 @@
+\begin{table*}[tb]
+\centering
+\caption{\revcap{Fusion variants on the test tuples of the specimen-disjoint
+protocol: mean over the 16 folds, standard deviation across partitions in
+parentheses. Best per column in bold.}}
+\label{tab:fusion}
+\begin{tabular}{lrrrr}
+\toprule
+Variant & F1 & FPR & ROC-AUC & PR-AUC \\
+\midrule
+Density check ($\tau$ selected on validation) & 0.562\,(0.017) & 0.127\,(0.028) & 0.731\,(0.009) & 0.645\,(0.013) \\
+MLP & 0.716\,(0.016) & \textbf{0.076\,(0.009)} & 0.876\,(0.007) & 0.780\,(0.017) \\
+Projection head, $\lambda{=}0$ & 0.720\,(0.015) & 0.095\,(0.014) & 0.880\,(0.007) & 0.774\,(0.019) \\
+Projection head + gates, Eq.~\eqref{eq:gated}, $\lambda{=}0$ & 0.714\,(0.017) & 0.099\,(0.013) & 0.876\,(0.008) & 0.761\,(0.019) \\
+Projection head, $\lambda{=}0.5$ & 0.725\,(0.017) & 0.097\,(0.015) & 0.886\,(0.008) & 0.780\,(0.018) \\
+Projection head, $\lambda{=}1$ & 0.726\,(0.016) & 0.096\,(0.015) & 0.888\,(0.007) & 0.781\,(0.018) \\
+Projection head, $\lambda{=}2$ & 0.728\,(0.016) & 0.096\,(0.011) & 0.890\,(0.008) & 0.784\,(0.020) \\
+Projection head, $\lambda{=}5$$^{a}$ & \textbf{0.729\,(0.018)} & 0.095\,(0.014) & \textbf{0.892\,(0.007)} & \textbf{0.788\,(0.020)} \\
+\bottomrule
+\multicolumn{5}{l}{\footnotesize $^{a}$Default setting; validation selects $\lambda{=}5$ in \nLamFive{} of the 16 folds and $\lambda{=}2$ in the others.}
+\end{tabular}
+\end{table*}

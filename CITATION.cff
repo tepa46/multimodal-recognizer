@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 type: software
-version: "1.0.0"
-date-released: "2026-09-01"
+version: "1.1.0"
+date-released: "2026-10-31"
 message: "If you use this software or the released datasets, please cite the paper."
 title: "Physics-aware multimodal fusion for fraud detection in automated reverse-vending machines"
 authors:

@@ -1,0 +1,25 @@
+specimen_id,name,class_name,camera_id,height_cm,width_cm,depth_cm,volume_cm3,mass_empty_g,mass_loaded_g
+6e2e12f8-8704-446e-b3d7-abeb3a88a901,power bank box,carton,iphone17pro,13.0,8.0,3.0,312.0,38.0,157.0
+7e4bf1d3-50e7-4f41-b283-ef74216bb29a,curd snack box,carton,iphone17pro,11.0,3.5,3.5,134.75,6.0,30.0
+3b3b401d-081d-45f5-bd24-e99b5e3e5fdc,cola glass bottle 0.33 l,glass_bottle,pixel7,22.5,6.0,6.0,810.0,240.0,580.0
+b0eddea3-2c6a-49f1-9a9d-b445ec601161,Il Primo bottle,glass_bottle,iphone17pro,24.5,5.0,5.0,612.5,172.0,386.0
+1d017498-c92b-44b2-875b-8158e05fcbc4,small glass jar,glass_jar,iphone17pro,11.5,8.0,8.0,736.0,253.0,436.0
+850b7b5c-f5b8-4dd4-911c-d2d393e097df,green pea tin,metal_can,iphone17pro,7.0,6.5,6.5,295.75,35.0,257.0
+ea39b465-eb9c-443c-84aa-00d1887b18ca,red Monster Energy can,metal_can,xiaomi14t,6.5,6.5,16.7,705.575,17.0,403.0
+da493385-9696-44b2-9854-f8f6720918d1,badge,other,iphone17pro,10.2,5.9,0.4,24.072,20.0,
+488ea150-8597-46e2-b16f-588b124913ff,toy boat,other,iphone17pro,14.5,4.5,5.0,326.25,330.0,
+477c6842-894f-4811-ad12-b9498bf63ef1,remote control,other,pixel7,15.0,4.0,2.0,120.0,80.0,
+124f1cca-72d5-476d-a1de-65b450ca0d93,pocket knife,other,xiaomi14t,4.0,15.0,1.5,90.0,27.0,
+b162f1a9-d788-46e1-a424-5b2ae024c58f,envelope,paper,pixel7,22.0,11.0,0.1,24.2,4.0,
+fa9e9fb9-e995-439b-b09e-fc510700c566,notebook page,paper,iphone17pro,20.0,13.0,0.05,13.0,4.0,
+497662e8-e8c7-4619-a832-1f9365331da6,Bionova muesli bag,plastic_bag,pixel7,21.0,18.5,6.0,2331.0,15.0,295.0
+2dc9a1ab-9d3b-48e9-a51a-fb9d98f3ca4c,Loko snack bag,plastic_bag,iphone17pro,28.0,20.0,5.0,2800.0,14.0,115.0
+8f03b490-5446-49ab-b079-f9092eba6228,grocery bag,plastic_bag,iphone17pro,19.0,12.0,6.0,1368.0,9.0,88.0
+200b1ffc-c0a0-4e4f-8016-dc6fa80da1af,Vesely Vodovoz water bottle,plastic_bottle,xiaomi14t,6.0,6.0,21.5,774.0,22.0,424.0
+1e9e7847-3c35-48ec-a4c8-e85753da5755,Prostokvashino milk bottle 1 l,plastic_bottle,pixel7,24.0,8.5,8.5,1734.0,31.0,989.0
+51d19aa8-edb2-4744-b9f6-35d49e3490e2,Pervym Delom water bottle 0.5 l,plastic_bottle,pixel7,21.0,6.0,6.0,756.0,14.0,514.0
+d0c551a8-dd57-44cd-a282-1fa52eeb7c19,salad bowl,plastic_container,pixel7,14.0,13.5,4.0,756.0,7.0,337.0
+b4054f6c-151a-40b6-940a-0608f3328040,container with blue lid,plastic_container,iphone17pro,17.5,12.5,6.0,1312.5,79.0,401.0
+253a4a83-f61b-48ef-ab3a-e14177e2aa14,Perekrestok tray with sauce,plastic_container,pixel7,19.0,13.5,3.5,897.75,10.0,240.0
+959f3b48-ed3c-4bb6-b15c-0ee971c7f874,Selo Zelyonoe carton 1 l,tetrapack,pixel7,21.0,7.5,7.0,1102.5,35.0,1030.0
+05f11a96-af21-45c5-bd9b-9c0cf9a4b8b5,juice carton 2 l,tetrapack,pixel7,27.5,12.0,7.5,2475.0,70.0,1980.0

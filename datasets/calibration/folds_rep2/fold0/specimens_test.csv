@@ -1,0 +1,24 @@
+specimen_id,name,class_name,camera_id,height_cm,width_cm,depth_cm,volume_cm3,mass_empty_g,mass_loaded_g
+7e4bf1d3-50e7-4f41-b283-ef74216bb29a,curd snack box,carton,iphone17pro,11.0,3.5,3.5,134.75,6.0,30.0
+6e2e12f8-8704-446e-b3d7-abeb3a88a901,power bank box,carton,iphone17pro,13.0,8.0,3.0,312.0,38.0,157.0
+b0eddea3-2c6a-49f1-9a9d-b445ec601161,Il Primo bottle,glass_bottle,iphone17pro,24.5,5.0,5.0,612.5,172.0,386.0
+0ce9c9e8-bd86-434c-98b3-966c663d646c,Natakhtari glass bottle,glass_bottle,xiaomi14t,7.0,7.0,26.0,1274.0,309.0,700.0
+480217fd-eb20-448f-96f7-b5bca95045a9,unlabelled glass jar,glass_jar,xiaomi14t,6.0,6.0,10.2,367.2,146.0,323.0
+850b7b5c-f5b8-4dd4-911c-d2d393e097df,green pea tin,metal_can,iphone17pro,7.0,6.5,6.5,295.75,35.0,257.0
+0392ee73-366e-4b2e-a159-9a03908e2219,white Adrenaline Rush can,metal_can,xiaomi14t,6.5,6.5,16.7,705.575,14.0,166.0
+7a0649a4-af23-4be4-9379-0130c475ff2e,pudding cup,other,pixel7,9.5,9.5,8.5,767.125,12.0,212.0
+110962e9-b65b-4bb9-beda-905ce2bd1e54,keyboard cleaner,other,iphone17pro,12.0,4.0,2.5,120.0,75.0,
+c4908129-20c3-4c7e-8053-4d682ff0cacd,rubber duck,other,xiaomi14t,8.0,5.0,7.2,288.0,47.0,
+e886ee4a-cc02-4094-a1bf-e80fde44f4ce,hand grip trainer,other,xiaomi14t,8.0,8.0,2.0,128.0,75.0,
+a43298f5-0e81-403e-a8f0-00a60566c534,crumpled sheet of paper,paper,pixel7,7.0,6.0,4.5,189.0,2.0,
+b162f1a9-d788-46e1-a424-5b2ae024c58f,envelope,paper,pixel7,22.0,11.0,0.1,24.2,4.0,
+f0333fc6-45be-4393-a525-d7101ab3d56b,Lay's chips bag,plastic_bag,iphone17pro,26.0,18.0,3.0,1404.0,6.0,106.0
+2dc9a1ab-9d3b-48e9-a51a-fb9d98f3ca4c,Loko snack bag,plastic_bag,iphone17pro,28.0,20.0,5.0,2800.0,14.0,115.0
+200b1ffc-c0a0-4e4f-8016-dc6fa80da1af,Vesely Vodovoz water bottle,plastic_bottle,xiaomi14t,6.0,6.0,21.5,774.0,22.0,424.0
+51d19aa8-edb2-4744-b9f6-35d49e3490e2,Pervym Delom water bottle 0.5 l,plastic_bottle,pixel7,21.0,6.0,6.0,756.0,14.0,514.0
+20ff744b-11a9-4652-a736-594951c90e62,Svyatoy Istochnik water bottle (blue),plastic_bottle,xiaomi14t,6.5,6.5,22.0,929.5,21.0,347.0
+e847b6e1-dc8b-43ea-909f-90500f5f9f2a,Cherkizovo cutlet tray,plastic_container,pixel7,19.0,14.5,5.5,1515.25,20.0,420.0
+253a4a83-f61b-48ef-ab3a-e14177e2aa14,Perekrestok tray with sauce,plastic_container,pixel7,19.0,13.5,3.5,897.75,10.0,240.0
+d0c551a8-dd57-44cd-a282-1fa52eeb7c19,salad bowl,plastic_container,pixel7,14.0,13.5,4.0,756.0,7.0,337.0
+3902c9a2-6019-4bb3-8f3c-867ccaeebc9e,J7 juice carton 1 l,tetrapack,iphone17pro,22.5,5.5,5.5,680.625,62.0,678.0
+8f1244df-a77c-4d27-a8d7-99880e53753f,milk carton,tetrapack,iphone17pro,23.0,7.0,7.0,1127.0,37.0,934.0

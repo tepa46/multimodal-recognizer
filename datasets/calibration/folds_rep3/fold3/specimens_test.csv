@@ -1,0 +1,22 @@
+specimen_id,name,class_name,camera_id,height_cm,width_cm,depth_cm,volume_cm3,mass_empty_g,mass_loaded_g
+b8cc8cab-1499-4577-9717-8307ca4aeab6,Greenfield carton piece,carton,xiaomi14t,35.0,17.5,0.5,306.25,14.0,
+955426f7-3122-4570-ad31-1a64dee86b21,Greenfield tea box,carton,pixel7,15.5,8.0,7.0,868.0,18.0,88.0
+e6636caa-3b32-445b-9314-7254ca2c5ff1,Dobry Cola glass bottle,glass_bottle,xiaomi14t,5.7,5.7,19.0,617.31,165.0,365.0
+9b9e6c2d-21df-48d8-8a13-c0e3caf8b5cd,Pikanta beans with vegetables jar 0.5 l,glass_jar,pixel7,15.0,7.5,7.5,843.75,250.0,710.0
+02f9a5ff-f96f-4eae-b73e-d2e06643a56b,cola can,metal_can,iphone17pro,13.4,5.0,5.0,335.0,13.0,270.0
+04c76d9c-f569-4382-8616-c8609f80c1b4,toothpaste tube,other,iphone17pro,16.6,4.7,1.1,85.822,23.0,
+c169258b-27dc-404f-a508-3c33f99f784a,measuring cup,other,pixel7,7.5,8.0,3.0,180.0,15.0,115.0
+2b8abfff-8c72-4a89-9421-86bbe3c3ce80,long gas lighter,other,pixel7,27.0,4.0,2.0,216.0,64.0,
+1e1c20cb-59a4-44b5-8f11-c91684b1f694,plastic cup,other,pixel7,9.0,9.0,13.5,1093.5,20.0,520.0
+8de67d06-f03d-4cba-9279-aa6e9527ca3e,crumpled white paper,paper,xiaomi14t,4.0,4.5,5.0,90.0,5.0,75.0
+256afd71-ad4b-4355-811a-e88f200c3f06,crumpled squared paper,paper,xiaomi14t,7.0,11.0,12.0,924.0,7.0,77.0
+497662e8-e8c7-4619-a832-1f9365331da6,Bionova muesli bag,plastic_bag,pixel7,21.0,18.5,6.0,2331.0,15.0,295.0
+2dc9a1ab-9d3b-48e9-a51a-fb9d98f3ca4c,Loko snack bag,plastic_bag,iphone17pro,28.0,20.0,5.0,2800.0,14.0,115.0
+51d19aa8-edb2-4744-b9f6-35d49e3490e2,Pervym Delom water bottle 0.5 l,plastic_bottle,pixel7,21.0,6.0,6.0,756.0,14.0,514.0
+19335b36-2c5c-4b6e-9436-da694842d17f,cola bottle 0.33 l,plastic_bottle,iphone17pro,13.0,6.0,6.0,468.0,23.0,405.0
+07fcc386-904f-4688-a27d-a466cd613c9c,Coca-Cola bottle,plastic_bottle,xiaomi14t,9.0,9.0,27.0,2187.0,38.0,929.0
+a6d8c882-48ad-4d35-8271-4899251020f4,Troekurovo meatball tray,plastic_container,pixel7,21.0,14.5,4.5,1370.25,16.0,366.0
+ca7b6de2-cf2c-40dc-8de8-a4ead7e7b735,black-bottom container,plastic_container,pixel7,15.0,15.0,6.0,1350.0,10.0,450.0
+d0c551a8-dd57-44cd-a282-1fa52eeb7c19,salad bowl,plastic_container,pixel7,14.0,13.5,4.0,756.0,7.0,337.0
+959f3b48-ed3c-4bb6-b15c-0ee971c7f874,Selo Zelyonoe carton 1 l,tetrapack,pixel7,21.0,7.5,7.0,1102.5,35.0,1030.0
+5d79632b-419f-4a8f-a63d-6f4bfade626f,FrutoNyanya juice carton,tetrapack,iphone17pro,10.4,3.9,5.4,219.024,12.0,187.0

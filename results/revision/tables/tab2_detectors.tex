@@ -1,0 +1,18 @@
+\begin{table}[!tb]
+\centering
+\caption{Detector comparison on the Hybrid-v3.3 test split (COCO
+bbox/mask mAP, val-best checkpoint). Best per column in bold;
+Faster R-CNN has no mask head.}
+\label{tab:detectors}
+\begin{tabular}{lrr}
+\toprule
+Architecture & test bbox mAP & test mask mAP \\
+\midrule
+HTC R-50                & \textbf{0.414} & \textbf{0.397} \\
+HTC ResNeXt-101-64x4d   & 0.409          & 0.394          \\
+Mask R-CNN R-50         & 0.389          & 0.371          \\
+Faster R-CNN R-50       & 0.381          & n/a            \\
+Cascade Mask R-CNN R-50 & 0.377          & 0.359          \\
+\bottomrule
+\end{tabular}
+\end{table}

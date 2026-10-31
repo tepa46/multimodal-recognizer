@@ -1,0 +1,21 @@
+specimen_id,name,class_name,camera_id,height_cm,width_cm,depth_cm,volume_cm3,mass_empty_g,mass_loaded_g
+0acb9112-be8e-4671-9ef2-9f4e93d98538,Barilla carton piece,carton,xiaomi14t,27.0,24.5,0.5,330.75,20.0,
+3b1b11c6-3e1e-44ff-8634-92ebdb55fc07,Dodo Pizza carton piece,carton,xiaomi14t,31.0,18.0,0.5,279.0,19.0,
+4c8aa9b4-521b-4129-a9f4-831b60e5e314,Borjomi bottle,glass_bottle,iphone17pro,24.0,6.0,6.0,864.0,279.0,703.0
+c8b062df-0038-4acf-8498-cad57b3bcc5c,Nutella jar,glass_jar,iphone17pro,10.0,8.5,6.0,510.0,243.0,457.0
+db7c3bc8-2b48-4e58-bf26-299762e1add5,Dr Pepper can,metal_can,xiaomi14t,6.0,6.0,14.5,522.0,13.0,185.0
+c2c45e9d-1691-40da-812c-3f83ab421b68,Pepsi can 0.33 l,metal_can,pixel7,11.5,6.0,6.0,414.0,15.0,360.0
+e886ee4a-cc02-4094-a1bf-e80fde44f4ce,hand grip trainer,other,xiaomi14t,8.0,8.0,2.0,128.0,75.0,
+30add5ea-00c2-41a0-9f64-f86dae9db352,plastic spoon,other,pixel7,18.0,6.5,2.0,234.0,16.0,
+1e1c20cb-59a4-44b5-8f11-c91684b1f694,plastic cup,other,pixel7,9.0,9.0,13.5,1093.5,20.0,520.0
+4aa04411-f649-45f7-b0c3-54ba6b53a6ad,black scissors,other,iphone17pro,16.0,3.0,0.5,24.0,28.0,
+04c76d9c-f569-4382-8616-c8609f80c1b4,toothpaste tube,other,iphone17pro,16.6,4.7,1.1,85.822,23.0,
+256afd71-ad4b-4355-811a-e88f200c3f06,crumpled squared paper,paper,xiaomi14t,7.0,11.0,12.0,924.0,7.0,77.0
+fd7b83b0-6bbe-47fb-b833-7a6912d9e6bb,green and purple bag,plastic_bag,xiaomi14t,10.0,20.0,20.0,4000.0,13.0,83.0
+fa0e93f0-7d53-44ca-b580-2cde181a005c,Matti muesli bag,plastic_bag,pixel7,21.0,17.0,5.5,1963.5,14.0,264.0
+9429bb3b-e3ac-4681-aa71-289eefcdc9b9,wide kvass bottle 2 l,plastic_bottle,iphone17pro,26.0,13.0,13.0,4394.0,58.0,2053.0
+07fcc386-904f-4688-a27d-a466cd613c9c,Coca-Cola bottle,plastic_bottle,xiaomi14t,9.0,9.0,27.0,2187.0,38.0,929.0
+1effb181-109c-4191-bb9c-a0a8cba27922,small rectangular container,plastic_container,xiaomi14t,10.0,16.0,5.0,800.0,11.0,
+e2c0b019-a676-4edf-bc89-efe1ee7bb519,round container,plastic_container,xiaomi14t,19.0,19.0,6.7,2418.7,19.0,
+8f1244df-a77c-4d27-a8d7-99880e53753f,milk carton,tetrapack,iphone17pro,23.0,7.0,7.0,1127.0,37.0,934.0
+88e8819d-8d66-4766-93f1-cea36d7ff3fd,Fitelit carton 0.5 l,tetrapack,pixel7,12.0,7.5,7.0,630.0,25.0,540.0

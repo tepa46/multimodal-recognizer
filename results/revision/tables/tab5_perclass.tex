@@ -1,0 +1,29 @@
+\begin{table*}[tb]
+\centering
+\small
+\caption{Per-class test bbox~AP across detector architectures
+(val-best checkpoint; best per row in bold). \texttt{glass\_jar} and
+\texttt{tetrapack} have the thinnest test support, 11 and 33
+instances, and their rows should not be read as model properties. The
+final row is the mean over classes, equal to the bbox~mAP of
+Table~\ref{tab:detectors}.}
+\label{tab:perclass}
+\begin{tabular}{lrrrrrr}
+\toprule
+class & htc\_x101 & htc\_r50 & mask\_rcnn & cascade & faster\_rcnn & $n_{\text{test}}$ \\
+\midrule
+plastic\_bottle    & \textbf{0.663} & 0.644 & 0.636 & 0.630 & 0.628 & 483 \\
+glass\_bottle      & \textbf{0.863} & 0.860 & 0.834 & 0.860 & 0.820 & 106 \\
+glass\_jar         & 0.067 & \textbf{0.266} & 0.188 & 0.016 & 0.169 & 11 \\
+metal\_can         & \textbf{0.791} & 0.788 & 0.772 & 0.782 & 0.758 & 304 \\
+carton             & \textbf{0.142} & 0.118 & 0.111 & 0.108 & 0.124 & 918 \\
+tetrapack          & \textbf{0.080} & 0.053 & 0.049 & 0.041 & 0.061 & 33 \\
+paper              & \textbf{0.143} & 0.099 & 0.102 & 0.097 & 0.066 & 84 \\
+plastic\_bag       & \textbf{0.497} & 0.479 & 0.446 & 0.456 & 0.423 & 1,196 \\
+plastic\_container & \textbf{0.631} & 0.617 & 0.580 & 0.587 & 0.589 & 374 \\
+other              & \textbf{0.214} & 0.211 & 0.169 & 0.195 & 0.169 & 755 \\
+\midrule
+\textbf{mean (= bbox mAP)} & 0.409 & \textbf{0.414} & 0.389 & 0.377 & 0.381 & 4,264 \\
+\bottomrule
+\end{tabular}
+\end{table*}

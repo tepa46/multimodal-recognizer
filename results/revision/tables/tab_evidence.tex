@@ -1,0 +1,22 @@
+\begin{table*}[tb]
+\centering
+\caption{\revcap{Origin of the channels in every experiment. Generated: drawn
+from the measured density of a calibration specimen; own output: the
+detector's boxes and classes; features: ROI features on annotated boxes.}}
+\label{tab:evidence}
+\footnotesize
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{@{}lllllll@{}}
+\toprule
+Experiment & Section & Images & Volume & Mass & Fraud & Detector \\
+\midrule
+Detector comparison & \ref{sec:exp:c4} & Hybrid-v3.3 & -- & -- & -- & own output \\
+Fusion heads and ablations & \ref{sec:exp:c2}--\ref{sec:exp:modality} & Hybrid-v3.3 & proxy & generated & generated & features \\
+Noise grid, sensitivity & \ref{sec:exp:robust}, \ref{sec:exp:density} & Hybrid-v3.3 & proxy & generated & generated & features \\
+Detector transfer & \ref{sec:exp:ood} & BeachLitter & -- & -- & -- & own output \\
+Frozen head, unseen source & \ref{sec:exp:ood} & BeachLitter & proxy & generated & generated & features \\
+Safety net & \ref{sec:exp:real} & real495 & measured & measured & none (detector confusions) & own output \\
+Measured masses & \ref{sec:exp:measured} & real495 & measured & measured & real: 123 filled, 7 foreign object & features \\
+\bottomrule
+\end{tabular}
+\end{table*}

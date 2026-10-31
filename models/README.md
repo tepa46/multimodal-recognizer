@@ -5,22 +5,34 @@ here — see **Pretrained weights we do not redistribute** below.
 
 ## Fusion heads — in this repository
 
-`fusion/` holds every trained fusion head from the anchor battery: the gated
-variants across the λ grid, the MLP baseline, and their seeds. 
+The heads of the specimen-disjoint protocol at the default λ = 5 (projection
+head without gates, log inputs), one per fold, partition and seed:
 
 ```
-fusion/gated_lam0_mu0_s42/best.pth     canonical operating point (λ=0, seed 42)
-fusion/gated_lam{0.5,1,2,5}_mu0_s{42,43,44}/best.pth
-fusion/mlp_s{42,43,44}/best.pth
+fusion/v3_4_folds{,_rep1,_rep2,_rep3}/fold{0..3}/proj/gated_lam5_mu0_s{42..51}/best.pth
+fusion/v3_4_noreal_heads/fold{0..3}/proj/gated_lam5_mu0_s{42..51}/best.pth
 ```
+
+`v3_4_noreal_heads` are trained on the ROI features of `htc_x101_v33_noreal`
+without the real495 frames; they are the heads scored on the measured real495
+tuples. Each `fold*/stats_proj.json` holds the validation-selected thresholds
+that the frozen evaluations apply:
+
+```bash
+python scripts/fusion/eval_frozen.py --runs-root models/fusion/v3_4_folds \
+    --target-tuples ... --target-cache ... --out ...
+```
+
+The flat directories (`fusion/gated_lam*_mu*_s*`, `fusion/mlp_s*`) are the heads
+of the earlier v3.3 protocol.
 
 The heads consume cached ROI features from a frozen detector; they are not
-standalone image models. See `scripts/fusion/eval_fraud.py`.
+standalone image models.
 
 ## Detector checkpoints — hosted externally
 
 Five benchmark detectors at their best-validation epoch, plus the two retrained
-without real495 frames for the safety-net experiment (§ *Physics as a safety net*).
+without real495 frames for the safety-net experiment and the measured-mass evaluation.
 
 | checkpoint | val bbox mAP | size |
 |---|---:|---:|

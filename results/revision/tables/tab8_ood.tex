@@ -1,0 +1,20 @@
+\begin{table*}[tb]
+\centering
+\caption{\revcap{Density check and projection head in domain and on BeachLitter
+tuples at thresholds frozen on in-domain validation. Standard deviation in
+parentheses: across partitions in domain, across folds on BeachLitter.}}
+\label{tab:oodfusion}
+\begin{tabular}{lrrrrr}
+\toprule
+Variant & F1 & FPR & heavy-fill $\uparrow$ & foreign-object $\uparrow$ & wrong-class $\uparrow$ \\
+\midrule
+\multicolumn{6}{@{}l}{\emph{In-domain (Hybrid-v3.3 test, 16 folds)}} \\
+Density check & 0.562\,(0.017) & 0.127\,(0.028) & 0.896\,(0.014) & 0.585\,(0.079) & 0.139\,(0.036) \\
+Projection head ($\lambda{=}5$) & 0.729\,(0.018) & 0.095\,(0.014) & 0.890\,(0.013) & 0.546\,(0.023) & 0.803\,(0.018) \\
+\midrule
+\multicolumn{6}{@{}l}{\emph{Unseen source (BeachLitter, frozen thresholds, 4 folds)}} \\
+Density check & 0.458\,(0.108) & 0.254\,(0.328) & 0.801\,(0.187) & 0.567\,(0.283) & 0.135\,(0.154) \\
+Projection head ($\lambda{=}5$) & 0.541\,(0.062) & 0.222\,(0.077) & 0.811\,(0.149) & 0.535\,(0.228) & 0.562\,(0.153) \\
+\bottomrule
+\end{tabular}
+\end{table*}
